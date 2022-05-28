@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+zlG+qU4RMlCgeN4fGRpDSE5CyyphjtCpKBfomg2Z38o12RP8cLjBBozGmtyh2OLj0RTp5hZZhxJs+9l1nGRZg==",
+  "dgSpecHash": "mBEemNTvx+ulizofDJG+S9RhOJ8z2XB4C96YvW6o1wN6fez0MNmbj6bdA+8m4Au2eS2aXb/yO865TcIwzM0gcg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\SAgramonte\\Documents\\Diseño y desarrollo de aplicaciones\\Git\\EasyCredit\\easycredit\\easycredit.csproj",
+  "projectFilePath": "C:\\Users\\SAgramonte\\Documents\\Diseño y desarrollo de aplicaciones\\Git\\EasyCredit\\easyCredit\\easycredit.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SAgramonte\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\SAgramonte\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.3\\microsoft.aspnetcore.cryptography.internal.6.0.3.nupkg.sha512",
