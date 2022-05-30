@@ -1,5 +1,5 @@
 ﻿<!-- Page Wrapper -->
-<div id="wrapper">
+
 
     <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
@@ -27,25 +27,29 @@
         <hr class="sidebar-divider" />
 
         <!-- Heading -->
-        <div class="sidebar-heading">
-            Interface
-        </div>
+        <div class="sidebar-heading text-white">
+             <i class="fas fa-fw fa-cog text-black"></i>
+                <span>Mantenimientos</span>
+   
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link" href="#">
-                <i class="fas fa-fw fa-cog"></i>
-                <span>Mantenimientos</span>
-            </a>
-            <div id="collapseTwo" class="collapse">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Custom Components:</h6>
-                    <a class="collapse-item" href="buttons.html">Buttons</a>
-                    <a class="collapse-item" href="cards.html">Cards</a>
+            
+            <div class="">
+                <div class="bg-white text-black py-2 rounded">
+                    <div class="ml-3">
+                    <h6 class="text-black">Cruds:</h6>
+                 
+                   <a class="nav-item d-block" asp-controller="TipoCliente" asp-action="Index"><i class="fa-solid fa-people-arrows-left-right text-black"></i>>Tipo Clientes</a>
+                   <a class="nav-item d-block" asp-controller="Cliente" asp-action="Index"> <i class="fa-solid fa-people-robbery text-black"></i>Clientes</a>
+                   <a class="nav-item d-block" asp-controller="Prestamo" asp-action="Index"><i class="fa-solid fa-money-bill-1-wave text-black"></i>Prestamos</a>
+                   <a class="nav-item d-block" asp-controller="Garantia" asp-action="Index"> <i class="fa-solid fa-shield-check"></i>Garantia</a>
+                  
+               </div>
                 </div>
             </div>
         </li>
-
+             </div>
         <!-- Nav Item - Utilities Collapse Menu -->
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
@@ -116,7 +120,7 @@
         </div>
 
     </ul>
-  
 
-      
+
+
 

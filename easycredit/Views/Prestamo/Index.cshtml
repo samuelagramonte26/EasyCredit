@@ -1,0 +1,104 @@
+@model IEnumerable<easycredit.Models.Prestamo>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div class="container horizontal-scrollable">
+    <div class="row overflow-scroll">
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Codigo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Monto)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Plazo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TazaInteres)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FechaSolicitud)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FechaAprovacion)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FechaInicio)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FechaTermino)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Cliente)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Garante)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Garantia)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Codigo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Monto)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Plazo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TazaInteres)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FechaSolicitud)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FechaAprovacion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FechaInicio)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FechaTermino)
+                        </td>
+
+
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Cliente.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Garante.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Garantia.Id)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

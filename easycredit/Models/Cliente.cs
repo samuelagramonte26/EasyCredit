@@ -27,7 +27,9 @@ namespace easycredit.Models
         public int? UsuarioEliminador { get; set; }
         public int? UsuarioEditor { get; set; }
         public bool? Active { get; set; }
+        public int? TipoId { get; set; }
 
+        public virtual TipoCliente? Tipo { get; set; }
         public virtual ICollection<ClienteTipoCliente> ClienteTipoClientes { get; set; }
         public virtual ICollection<Cuentum> Cuenta { get; set; }
         public virtual ICollection<Inversion> Inversions { get; set; }

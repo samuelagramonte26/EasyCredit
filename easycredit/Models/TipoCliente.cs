@@ -8,6 +8,7 @@ namespace easycredit.Models
         public TipoCliente()
         {
             ClienteTipoClientes = new HashSet<ClienteTipoCliente>();
+            Clientes = new HashSet<Cliente>();
         }
 
         public int Id { get; set; }
@@ -22,5 +23,6 @@ namespace easycredit.Models
         public bool? Active { get; set; }
 
         public virtual ICollection<ClienteTipoCliente> ClienteTipoClientes { get; set; }
+        public virtual ICollection<Cliente> Clientes { get; set; }
     }
 }

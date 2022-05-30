@@ -36,15 +36,8 @@ namespace easycredit.Data
         public virtual DbSet<TipoCliente> TipoClientes { get; set; } = null!;
         public virtual DbSet<TipoCuentum> TipoCuenta { get; set; } = null!;
         public virtual DbSet<TipoGarantium> TipoGarantia { get; set; } = null!;
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=easycredit;Trusted_Connection=True;MultipleActiveResultSets=true");
-            }
-        }
+        public virtual DbSet<TipoUsuario> TipoUsuarios { get; set; } = null!;
+        public virtual DbSet<Usuario> Usuarios { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -184,11 +177,18 @@ namespace easycredit.Data
                     .IsUnicode(false)
                     .HasColumnName("telefono");
 
+                entity.Property(e => e.TipoId).HasColumnName("tipoID");
+
                 entity.Property(e => e.UsuarioCreador).HasColumnName("usuario_creador");
 
                 entity.Property(e => e.UsuarioEditor).HasColumnName("usuario_editor");
 
                 entity.Property(e => e.UsuarioEliminador).HasColumnName("usuario_eliminador");
+
+                entity.HasOne(d => d.Tipo)
+                    .WithMany(p => p.Clientes)
+                    .HasForeignKey(d => d.TipoId)
+                    .HasConstraintName("Fk_tipoCliente");
             });
 
             modelBuilder.Entity<ClienteTipoCliente>(entity =>
@@ -774,6 +774,91 @@ namespace easycredit.Data
                 entity.Property(e => e.UsuarioEditor).HasColumnName("usuario_editor");
 
                 entity.Property(e => e.UsuarioEliminador).HasColumnName("usuario_eliminador");
+            });
+
+            modelBuilder.Entity<TipoUsuario>(entity =>
+            {
+                entity.ToTable("tipoUsuario");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.Active)
+                    .HasColumnName("active")
+                    .HasDefaultValueSql("((1))");
+
+                entity.Property(e => e.Descripcion)
+                    .HasMaxLength(100)
+                    .IsUnicode(false)
+                    .HasColumnName("descripcion");
+
+                entity.Property(e => e.FechaCreado)
+                    .HasColumnType("datetime")
+                    .HasColumnName("fecha_creado");
+
+                entity.Property(e => e.FechaEditado)
+                    .HasColumnType("datetime")
+                    .HasColumnName("fecha_editado");
+
+                entity.Property(e => e.FechaEliminado)
+                    .HasColumnType("datetime")
+                    .HasColumnName("fecha_eliminado");
+
+                entity.Property(e => e.Tipo)
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("tipo");
+
+                entity.Property(e => e.UsuarioCreador).HasColumnName("usuario_creador");
+
+                entity.Property(e => e.UsuarioEditor).HasColumnName("usuario_editor");
+
+                entity.Property(e => e.UsuarioEliminador).HasColumnName("usuario_eliminador");
+            });
+
+            modelBuilder.Entity<Usuario>(entity =>
+            {
+                entity.ToTable("usuarios");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.Active)
+                    .HasColumnName("active")
+                    .HasDefaultValueSql("((1))");
+
+                entity.Property(e => e.Clave)
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("clave");
+
+                entity.Property(e => e.FechaCreado)
+                    .HasColumnType("datetime")
+                    .HasColumnName("fecha_creado");
+
+                entity.Property(e => e.FechaEditado)
+                    .HasColumnType("datetime")
+                    .HasColumnName("fecha_editado");
+
+                entity.Property(e => e.FechaEliminado)
+                    .HasColumnType("datetime")
+                    .HasColumnName("fecha_eliminado");
+
+                entity.Property(e => e.TipoId).HasColumnName("tipoID");
+
+                entity.Property(e => e.Usuario1)
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("usuario");
+
+                entity.Property(e => e.UsuarioCreador).HasColumnName("usuario_creador");
+
+                entity.Property(e => e.UsuarioEditor).HasColumnName("usuario_editor");
+
+                entity.Property(e => e.UsuarioEliminador).HasColumnName("usuario_eliminador");
+
+                entity.HasOne(d => d.Tipo)
+                    .WithMany(p => p.Usuarios)
+                    .HasForeignKey(d => d.TipoId)
+                    .HasConstraintName("FK__usuarios__active__06CD04F7");
             });
 
             OnModelCreatingPartial(modelBuilder);

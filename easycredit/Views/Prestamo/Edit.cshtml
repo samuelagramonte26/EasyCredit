@@ -1,0 +1,117 @@
+@model easycredit.Models.Prestamo
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "_Layout";
+}
+
+<h1>Edit</h1>
+
+<h4>Prestamo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Codigo" class="control-label"></label>
+                <input asp-for="Codigo" class="form-control" />
+                <span asp-validation-for="Codigo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Monto" class="control-label"></label>
+                <input asp-for="Monto" class="form-control" />
+                <span asp-validation-for="Monto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Plazo" class="control-label"></label>
+                <input asp-for="Plazo" class="form-control" />
+                <span asp-validation-for="Plazo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TazaInteres" class="control-label"></label>
+                <input asp-for="TazaInteres" class="form-control" />
+                <span asp-validation-for="TazaInteres" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaSolicitud" class="control-label"></label>
+                <input asp-for="FechaSolicitud" class="form-control" />
+                <span asp-validation-for="FechaSolicitud" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaAprovacion" class="control-label"></label>
+                <input asp-for="FechaAprovacion" class="form-control" />
+                <span asp-validation-for="FechaAprovacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaInicio" class="control-label"></label>
+                <input asp-for="FechaInicio" class="form-control" />
+                <span asp-validation-for="FechaInicio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaTermino" class="control-label"></label>
+                <input asp-for="FechaTermino" class="form-control" />
+                <span asp-validation-for="FechaTermino" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClienteId" class="control-label"></label>
+                <select asp-for="ClienteId" class="form-control" asp-items="ViewBag.ClienteId"></select>
+                <span asp-validation-for="ClienteId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GaranteId" class="control-label"></label>
+                <select asp-for="GaranteId" class="form-control" asp-items="ViewBag.GaranteId"></select>
+                <span asp-validation-for="GaranteId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GarantiaId" class="control-label"></label>
+                <select asp-for="GarantiaId" class="form-control" asp-items="ViewBag.GarantiaId"></select>
+                <span asp-validation-for="GarantiaId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaCreado" class="control-label"></label>
+                <input asp-for="FechaCreado" class="form-control" />
+                <span asp-validation-for="FechaCreado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaEditado" class="control-label"></label>
+                <input asp-for="FechaEditado" class="form-control" />
+                <span asp-validation-for="FechaEditado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaEliminado" class="control-label"></label>
+                <input asp-for="FechaEliminado" class="form-control" />
+                <span asp-validation-for="FechaEliminado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsuarioCreador" class="control-label"></label>
+                <input asp-for="UsuarioCreador" class="form-control" />
+                <span asp-validation-for="UsuarioCreador" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsuarioEliminador" class="control-label"></label>
+                <input asp-for="UsuarioEliminador" class="form-control" />
+                <span asp-validation-for="UsuarioEliminador" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsuarioEditor" class="control-label"></label>
+                <input asp-for="UsuarioEditor" class="form-control" />
+                <span asp-validation-for="UsuarioEditor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Active" class="control-label"></label>
+                <input asp-for="Active" class="form-control" />
+                <span asp-validation-for="Active" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

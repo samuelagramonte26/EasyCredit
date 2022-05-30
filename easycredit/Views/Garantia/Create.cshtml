@@ -1,0 +1,75 @@
+@model easycredit.Models.Garantium
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "_Layout";
+}
+
+<h1>Create</h1>
+
+<h4>Garantium</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Codigo" class="control-label"></label>
+                <input asp-for="Codigo" class="form-control" />
+                <span asp-validation-for="Codigo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Valor" class="control-label"></label>
+                <input asp-for="Valor" class="form-control" />
+                <span asp-validation-for="Valor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ubicacion" class="control-label"></label>
+                <input asp-for="Ubicacion" class="form-control" />
+                <span asp-validation-for="Ubicacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoId" class="control-label"></label>
+                <select asp-for="TipoId" class ="form-control" asp-items="ViewBag.TipoId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaCreado" class="control-label"></label>
+                <input asp-for="FechaCreado" class="form-control" />
+                <span asp-validation-for="FechaCreado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaEditado" class="control-label"></label>
+                <input asp-for="FechaEditado" class="form-control" />
+                <span asp-validation-for="FechaEditado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaEliminado" class="control-label"></label>
+                <input asp-for="FechaEliminado" class="form-control" />
+                <span asp-validation-for="FechaEliminado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsuarioCreador" class="control-label"></label>
+                <input asp-for="UsuarioCreador" class="form-control" />
+                <span asp-validation-for="UsuarioCreador" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsuarioEliminador" class="control-label"></label>
+                <input asp-for="UsuarioEliminador" class="form-control" />
+                <span asp-validation-for="UsuarioEliminador" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsuarioEditor" class="control-label"></label>
+                <input asp-for="UsuarioEditor" class="form-control" />
+                <span asp-validation-for="UsuarioEditor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
