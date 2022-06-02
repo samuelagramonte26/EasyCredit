@@ -531,6 +531,8 @@ namespace easycredit.Data
 
                 entity.Property(e => e.Id).HasColumnName("id");
 
+                entity.Property(e => e.Abono).HasColumnName("abono");
+
                 entity.Property(e => e.Active)
                     .HasColumnName("active")
                     .HasDefaultValueSql("((1))");
@@ -543,6 +545,8 @@ namespace easycredit.Data
                     .HasMaxLength(30)
                     .IsUnicode(false)
                     .HasColumnName("codigoComprobante");
+
+                entity.Property(e => e.CodigoPrestamo).HasColumnName("codigoPrestamo");
 
                 entity.Property(e => e.Cuota).HasColumnName("cuota");
 
@@ -575,6 +579,11 @@ namespace easycredit.Data
                 entity.Property(e => e.UsuarioEditor).HasColumnName("usuario_editor");
 
                 entity.Property(e => e.UsuarioEliminador).HasColumnName("usuario_eliminador");
+
+                entity.HasOne(d => d.CodigoPrestamoNavigation)
+                    .WithMany(p => p.Pagos)
+                    .HasForeignKey(d => d.CodigoPrestamo)
+                    .HasConstraintName("FK__pago__codigoPres__17036CC0");
 
                 entity.HasOne(d => d.ModalidadNavigation)
                     .WithMany(p => p.Pagos)
@@ -634,6 +643,10 @@ namespace easycredit.Data
                 entity.Property(e => e.Monto).HasColumnName("monto");
 
                 entity.Property(e => e.Plazo).HasColumnName("plazo");
+
+                entity.Property(e => e.Saldado)
+                    .HasColumnName("saldado")
+                    .HasDefaultValueSql("((0))");
 
                 entity.Property(e => e.TazaInteres).HasColumnName("tazaInteres");
 

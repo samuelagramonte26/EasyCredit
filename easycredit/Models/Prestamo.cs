@@ -8,6 +8,7 @@ namespace easycredit.Models
         public Prestamo()
         {
             CronogramaPrestamos = new HashSet<CronogramaPrestamo>();
+            Pagos = new HashSet<Pago>();
         }
 
         public int Id { get; set; }
@@ -29,10 +30,12 @@ namespace easycredit.Models
         public int? UsuarioEliminador { get; set; }
         public int? UsuarioEditor { get; set; }
         public bool? Active { get; set; }
+        public bool? Saldado { get; set; }
 
         public virtual Cliente? Cliente { get; set; }
         public virtual Cliente? Garante { get; set; }
         public virtual Garantium? Garantia { get; set; }
         public virtual ICollection<CronogramaPrestamo> CronogramaPrestamos { get; set; }
+        public virtual ICollection<Pago> Pagos { get; set; }
     }
 }

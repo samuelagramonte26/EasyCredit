@@ -1,0 +1,97 @@
+@model IEnumerable<easycredit.Models.Pago>
+
+@{
+    ViewData["Title"] = "Listado";
+    ViewData["Seccion"] = "Pagos";
+    Layout = "_Layout";
+}
+
+<h1>Listado de pagos</h1>
+
+<p>
+    <a class="btn btn-success" asp-action="Create"> <i class="fa-solid fa-plus"></i> Agregar</a>
+</p>
+<div class="container horizontal-scrollable">
+    <div class="row overflow-scroll">
+        <table class="table table-hover table-striped table-responsive-lg">
+            <thead class="table-dark">
+                <tr>
+                    <th>
+                        Capital inicial
+                    </th>
+
+                    <th>
+                        Fecha Efectiva
+                    </th>
+                    <th>
+                        Cuota
+                    </th>
+                    <th>
+                        Interes
+                    </th>
+                    <th>
+                        Abono
+                    </th>
+                    <th>
+                        Saldo Pendiente
+                    </th>
+                    <th>
+                        Cod. Comprobante
+                    </th>
+                    <th>
+                        Cod. Prestamo
+
+                    </th>
+                    <th>
+                        Modalidad
+                    </th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CapitalInicial)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FechaEfectiva)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Cuota)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Interes)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Abono)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Amortizacion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CodigoComprobante)
+                        </td>
+
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CodigoPrestamoNavigation.Codigo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ModalidadNavigation.Tipo)
+                        </td>
+                        <td>
+                            <div class="btn-group btn-sm" role="group" aria-label="Basic example">
+                                <a class="btn btn-warning ml-1  btn-sm" asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
+                                <a class="btn btn-info ml-1  btn-sm" asp-action="Details" asp-route-id="@item.Id"><i class="fa-solid fa-info"></i> Detalle</a>
+                                <a class="btn btn-danger ml-1 btn-sm" asp-action="Delete" asp-route-id="@item.Id"><i class="fa-solid fa-trash-can"></i> Eliminar</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

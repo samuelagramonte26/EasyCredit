@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hNpEAXIKYjUzFzhvbbUX58XGhwIX+aFQnODu7wFhpJDWYTYHi8sAcDHMRVtFfUMblkbrHIYjrz5zvzSgnEuu5w==",
+  "dgSpecHash": "PJhh5QLjHvDX0Vt+Z8Z5uUzCrd+/w0oF0kwBCYT8un5abknlBICzbdLOS+Xwc9MAytdaZzbe/1xnLThBZOKPhw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\SAgramonte\\Documents\\Diseño y desarrollo de aplicaciones\\Git\\EasyCredit\\easyCredit\\easycredit.csproj",
+  "projectFilePath": "C:\\Users\\SAgramonte\\Documents\\Diseño y desarrollo de aplicaciones\\Git\\EasyCredit\\easycredit\\easycredit.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SAgramonte\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\SAgramonte\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

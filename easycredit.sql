@@ -53,13 +53,16 @@ apellido VARCHAR(50),
 cedula VARCHAR(20),
 direccion varchar(100),
 telefono varchar(15),
+tipoID int,
 fecha_creado datetime,
 	fecha_editado datetime,
 	fecha_eliminado datetime,
 	usuario_creador int,
 	usuario_eliminador int,
 	usuario_editor int,
-	active bit default 1 
+	active bit default 1 ,
+
+
 );
 
 create table clienteTipoCliente(
@@ -205,8 +208,10 @@ fechaPlanificada date,
 fechaEfectiva date,
 cuota float,
 interes float,
+abono FLOAT,
 amortizacion float,
 modalidad int,
+codigoPrestamo int,
 codigoComprobante varchar(30),
 fecha_creado datetime,
 	fecha_editado datetime,
@@ -216,7 +221,8 @@ fecha_creado datetime,
 	usuario_editor int,
 	active bit default 1, 
 
-FOREIGN KEY (modalidad) REFERENCES modalidadPago(id)
+FOREIGN KEY (modalidad) REFERENCES modalidadPago(id),
+FOREIGN KEY (codigoPrestamo) REFERENCES prestamo(id)
 );
 
 create table tipoCuenta(

@@ -22,7 +22,7 @@ namespace easycredit.Controllers
         // GET: Prestamo
         public async Task<IActionResult> Index()
         {
-            var easycreditContext = _context.Prestamos.Include(p => p.Cliente).Include(p => p.Garante).Include(p => p.Garantia);
+            var easycreditContext = _context.Prestamos.Where(x=>x.Active == true && x.Saldado == false).Include(p => p.Cliente).Include(p => p.Garante).Include(p => p.Garantia);
             return View(await easycreditContext.ToListAsync());
         }
 
@@ -50,11 +50,11 @@ namespace easycredit.Controllers
         // GET: Prestamo/Create
         public IActionResult Create()
         {
-            var clientes = _context.Clientes.ToList();
-            var garantias = _context.Garantia.ToList();
-            ViewData["clientes"] = clientes;
+            ViewData["id"] = _context.Prestamos.Where(x=>x.Active==true).OrderByDescending(p => p.Id).FirstOrDefault()?.Id;
 
-            ViewData["garantias"] = garantias;
+            ViewData["clientes"] = _context.Clientes.Where(x => x.Active == true && x.Tipo.Tipo == "prestario" ).ToList();
+            ViewData["garantes"] = _context.Clientes.Where(x => x.Active == true && x.Tipo.Tipo=="garante").ToList();
+            ViewData["garantias"] =_context.Garantia.Where(x => x.Active == true);
             return View();
         }
 
@@ -63,10 +63,14 @@ namespace easycredit.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Codigo,Monto,Plazo,TazaInteres,FechaSolicitud,FechaAprovacion,FechaInicio,FechaTermino,ClienteId,GaranteId,GarantiaId,FechaCreado,FechaEditado,FechaEliminado,UsuarioCreador,UsuarioEliminador,UsuarioEditor,Active")] Prestamo prestamo)
+        public async Task<IActionResult> Create([Bind("Id,Codigo,Monto,Plazo,TazaInteres,FechaSolicitud,FechaAprovacion,FechaInicio,FechaTermino,ClienteId,GaranteId,GarantiaId,FechaCreado,FechaEditado,FechaEliminado,UsuarioCreador,UsuarioEliminador,UsuarioEditor,Active,Saldado")] Prestamo prestamo)
         {
             if (ModelState.IsValid)
             {
+                prestamo.TazaInteres = ((prestamo.TazaInteres/12) / 100);
+                prestamo.Plazo = (prestamo.Plazo * 12);
+                prestamo.FechaSolicitud = DateTime.Today.Date;
+
                 _context.Add(prestamo);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -90,9 +94,11 @@ namespace easycredit.Controllers
             {
                 return NotFound();
             }
-            ViewData["ClienteId"] = new SelectList(_context.Clientes, "Id", "Id", prestamo.ClienteId);
-            ViewData["GaranteId"] = new SelectList(_context.Clientes, "Id", "Id", prestamo.GaranteId);
-            ViewData["GarantiaId"] = new SelectList(_context.Garantia, "Id", "Id", prestamo.GarantiaId);
+            prestamo.TazaInteres = ((prestamo.TazaInteres * 12) * 100);
+            prestamo.Plazo= (prestamo.Plazo / 12);
+            ViewData["clientes"] = _context.Clientes.Where(x => x.Active == true && x.Tipo.Tipo == "prestario").ToList();
+            ViewData["garantes"] = _context.Clientes.Where(x => x.Active == true && x.Tipo.Tipo == "garante").ToList();
+            ViewData["garantias"] = _context.Garantia.Where(x => x.Active == true);
             return View(prestamo);
         }
 
@@ -101,7 +107,7 @@ namespace easycredit.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Codigo,Monto,Plazo,TazaInteres,FechaSolicitud,FechaAprovacion,FechaInicio,FechaTermino,ClienteId,GaranteId,GarantiaId,FechaCreado,FechaEditado,FechaEliminado,UsuarioCreador,UsuarioEliminador,UsuarioEditor,Active")] Prestamo prestamo)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Codigo,Monto,Plazo,TazaInteres,FechaSolicitud,FechaAprovacion,FechaInicio,FechaTermino,ClienteId,GaranteId,GarantiaId,FechaCreado,FechaEditado,FechaEliminado,UsuarioCreador,UsuarioEliminador,UsuarioEditor,Active,Saldado")] Prestamo prestamo)
         {
             if (id != prestamo.Id)
             {
@@ -112,6 +118,9 @@ namespace easycredit.Controllers
             {
                 try
                 {
+                    prestamo.FechaEditado = DateTime.Today.Date;
+                    prestamo.TazaInteres = ((prestamo.TazaInteres / 12) / 100);
+                    prestamo.Plazo = (prestamo.Plazo * 12);
                     _context.Update(prestamo);
                     await _context.SaveChangesAsync();
                 }
@@ -167,11 +176,32 @@ namespace easycredit.Controllers
             var prestamo = await _context.Prestamos.FindAsync(id);
             if (prestamo != null)
             {
-                _context.Prestamos.Remove(prestamo);
+                prestamo.Active = false;
+                var pagos = _context.Pagos.Where(x => x.CodigoPrestamo == prestamo.Id && x.Active == true);
+                foreach (var pago in pagos)
+                {
+                    pago.Active = false;
+                    pago.FechaEliminado = DateTime.Today.Date;
+                     _context.Update(pago);
+                    // _context.SaveChanges();
+
+                }
+                prestamo.Active = false;
+                prestamo.FechaEliminado = DateTime.Today.Date;
+                _context.Update(prestamo);
             }
-            
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+
+            try
+            {
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+                ViewData["error"] = "No se puede eliminar este prestamo primero debe eliminar los pagos relacionados al mismo!";
+                return View(prestamo);
+
+            }
         }
 
         private bool PrestamoExists(int id)

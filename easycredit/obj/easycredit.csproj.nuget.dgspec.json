@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\SAgramonte\\Documents\\Diseño y desarrollo de aplicaciones\\Git\\EasyCredit\\easyCredit\\easycredit.csproj": {}
+    "C:\\Users\\SAgramonte\\Documents\\Diseño y desarrollo de aplicaciones\\Git\\EasyCredit\\easycredit\\easycredit.csproj": {}
   },
   "projects": {
-    "C:\\Users\\SAgramonte\\Documents\\Diseño y desarrollo de aplicaciones\\Git\\EasyCredit\\easyCredit\\easycredit.csproj": {
+    "C:\\Users\\SAgramonte\\Documents\\Diseño y desarrollo de aplicaciones\\Git\\EasyCredit\\easycredit\\easycredit.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SAgramonte\\Documents\\Diseño y desarrollo de aplicaciones\\Git\\EasyCredit\\easyCredit\\easycredit.csproj",
+        "projectUniqueName": "C:\\Users\\SAgramonte\\Documents\\Diseño y desarrollo de aplicaciones\\Git\\EasyCredit\\easycredit\\easycredit.csproj",
         "projectName": "easycredit",
-        "projectPath": "C:\\Users\\SAgramonte\\Documents\\Diseño y desarrollo de aplicaciones\\Git\\EasyCredit\\easyCredit\\easycredit.csproj",
+        "projectPath": "C:\\Users\\SAgramonte\\Documents\\Diseño y desarrollo de aplicaciones\\Git\\EasyCredit\\easycredit\\easycredit.csproj",
         "packagesPath": "C:\\Users\\SAgramonte\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SAgramonte\\Documents\\Diseño y desarrollo de aplicaciones\\Git\\EasyCredit\\easyCredit\\obj\\",
+        "outputPath": "C:\\Users\\SAgramonte\\Documents\\Diseño y desarrollo de aplicaciones\\Git\\EasyCredit\\easycredit\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

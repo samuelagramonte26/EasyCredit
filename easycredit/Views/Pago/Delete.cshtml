@@ -1,0 +1,82 @@
+@model easycredit.Models.Pago
+
+@{
+    ViewData["Title"] = "Eliminar";
+    ViewData["Seccion"] = "Pagos";
+
+    Layout = "_Layout";
+}
+
+<h1>Eliminar Pago</h1>
+
+<h3 class="text-warning">&#191; Esta seguro que desea eliminar este pago? <i class="text-danger">esta accion no se podra revertir!</i></h3>
+<div>
+   
+    <hr />
+   <dl class="row">
+        <dt class = "col-sm-2">
+           Capital inicial
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CapitalInicial)
+        </dd>
+       
+        <dt class = "col-sm-2">
+           Fecha efectiva
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FechaEfectiva)
+        </dd>
+        <dt class = "col-sm-2">
+           Cuota
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cuota)
+        </dd>
+        <dt class = "col-sm-2">
+          Interes
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Interes)
+        </dd>
+         <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Abono)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Abono)
+        </dd>
+        <dt class = "col-sm-2">
+           Saldo pendiente
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Amortizacion)
+        </dd>
+        <dt class = "col-sm-2">
+           Cod. comprobante
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CodigoComprobante)
+        </dd>
+       
+       
+        <dt class = "col-sm-2">
+           Cod. prestamo
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CodigoPrestamoNavigation.Codigo)
+        </dd>
+        <dt class = "col-sm-2">
+         Modalidad pago
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ModalidadNavigation.Tipo)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+
+        <button type="submit" value="Delete" class="btn btn-danger" ><i class="fa-solid fa-trash-can"></i>Eliminar</button> |
+        <a class="nav-item" asp-action="Index">Volver al listado</a>
+    </form>
+</div>

@@ -21,7 +21,10 @@ namespace easycredit.Models
         public int? UsuarioEliminador { get; set; }
         public int? UsuarioEditor { get; set; }
         public bool? Active { get; set; }
+        public double? Abono { get; set; }
+        public int? CodigoPrestamo { get; set; }
 
+        public virtual Prestamo? CodigoPrestamoNavigation { get; set; }
         public virtual ModalidadPago? ModalidadNavigation { get; set; }
     }
 }
