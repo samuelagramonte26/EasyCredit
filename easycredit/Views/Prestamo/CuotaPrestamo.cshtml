@@ -1,0 +1,108 @@
+﻿@model IEnumerable<easycredit.Models.Pago>
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Cuotas";
+    ViewData["Seccion"] = "Prestamos";
+    int numero = 0;
+    int? plazo = 0;
+    int? pendientes = 0;
+    var cliente = "";
+    double monto = 0;
+    double total = 0;
+}
+
+<h1 class="text-center">Tabla de cuotas</h1>
+
+
+<table class="table table-hover table-striped">
+    <caption>Tabla de Cuotas</caption>
+    <thead class="table-dark">
+        <tr>
+            <th>
+                #.
+            </th>
+            <th>
+                Fecha Efectiva
+            </th>
+            <th>
+                Capital inicial
+            </th>
+
+
+            <th>
+                Cuota
+            </th>
+            <th>
+                Interes
+            </th>
+            <th>
+                Abono
+            </th>
+            <th>
+                Saldo Pendiente
+            </th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                @{
+                    numero++;
+                }
+                <td>
+                    @numero
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.FechaEfectiva)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.CapitalInicial)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Cuota)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Interes)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Abono)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Amortizacion)
+                </td>
+                @{
+                    plazo = item.CodigoPrestamoNavigation.Plazo;
+                    cliente = item.CodigoPrestamoNavigation.Cliente.Nombre;
+                    monto = (double)item.CodigoPrestamoNavigation.Monto;
+                    total = Math.Round((double)item.Amortizacion,2);
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+@{
+    pendientes = plazo - numero;
+}
+<div class="row">
+    <h2 class="text-black-50">Datos</h2>
+    <div class="col-3">
+<h4 class="text-danger">Pendientes: <i class="text-black-50">@pendientes</i></h4>
+<h4>Cliente: <i class="text-black-50">@cliente</i></h4>
+
+</div>
+ <div class="col-6">
+<h4 class="">Monto prestamo: <i class="text-black-50">@monto</i></h4>
+<h4>Total pagado: <i class="text-black-50">@total</i></h4>
+
+</div>
+
+</div>
+
+<a class="btn btn-primary ml-1 float-end  btn-sm" asp-action="Aprobados"><i class="bi bi-arrow-return-left"></i> Volver</a>
+<a class="btn btn-success ml-1 float-end  btn-sm" target="_blank" asp-controller="Reporte" asp-route-id="@ViewBag.id" asp-action="CuotaPrestamo"><i class="bi bi-printer"></i> Imprimir</a>
+

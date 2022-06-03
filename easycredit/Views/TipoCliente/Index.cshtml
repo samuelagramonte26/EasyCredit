@@ -2,15 +2,17 @@
 
 @{
     ViewData["Title"] = "Listado Tipo Cliente";
+    ViewData["Seccion"] = "Clientes";
     Layout = "_Layout";
 }
 
 
 <p>
-    <a class="btn-primary" asp-action="Create">Create New</a>
+    <a class="btn btn-success" asp-action="Create"><i class="bi bi-plus-lg"></i> Agregar</a>
 </p>
-<table class="table">
-    <thead>
+<table class="table table-hover table-striped">
+    <caption>Tipo Clientes</caption>
+    <thead class="table-dark">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Tipo)
@@ -18,67 +20,29 @@
             <th>
                 @Html.DisplayNameFor(model => model.Descripcion)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FechaCreado)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FechaEditado)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FechaEliminado)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UsuarioCreador)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UsuarioEliminador)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UsuarioEditor)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Active)
-            </th>
-            <th></th>
+
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tipo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descripcion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaCreado)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaEditado)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaEliminado)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UsuarioCreador)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UsuarioEliminador)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UsuarioEditor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Active)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tipo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descripcion)
+                </td>
+                <td>
+                    <div class="btn-group btn-sm" role="group" aria-label="Basic example">
+                        <a class="btn btn-warning ml-1  btn-sm" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i> Editar</a>
+                        <a class="btn btn-info ml-1  btn-sm" asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-info-circle"></i> Detalle</a>
+                        <a class="btn btn-danger ml-1 btn-sm" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i> Eliminar</a>
+                    </div>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
 

@@ -1,4 +1,4 @@
-@model IEnumerable<easycredit.Models.Prestamo>
+﻿@model IEnumerable<easycredit.Models.Prestamo>
 
 @{
     ViewData["Title"] = "Listado";
@@ -6,13 +6,11 @@
     Layout = "_Layout";
 }
 
-<h1>Listado de prestamos</h1>
+<h1>Listado de prestamos vigentes</h1>
 
-<p>
-    <a class="btn btn-success" asp-action="Create"> <i class="fa-solid fa-plus"></i>Agregar</a>
-</p>
+
 <table class="table table-hover table-striped">
-    <caption>Solicitud de prestamos</caption>
+    <caption> Prestamos vigentes</caption>
     <thead class="table-dark">
         <tr>
             <th>
@@ -30,7 +28,9 @@
             <th>
               Fecha solicitud
             </th>
-
+             <th>
+              Fecha aprobacion
+            </th>
             <th>
                 Fecha inicio
             </th>
@@ -67,7 +67,9 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.FechaSolicitud)
                 </td>
-
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaAprovacion)
+                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.FechaInicio)
                 </td>
@@ -86,9 +88,8 @@
                 </td>
                 <td>
                     <div class="btn-group btn-sm" role="group" aria-label="Basic example">
-                        <a class="btn btn-warning ml-1  btn-sm" asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
-                        <a class="btn btn-info ml-1  btn-sm" asp-action="Details" asp-route-id="@item.Id"><i class="fa-solid fa-info"></i> Detalle</a>
-                        <a class="btn btn-danger ml-1 btn-sm" asp-action="Delete" asp-route-id="@item.Id"><i class="fa-solid fa-trash-can"></i> Eliminar</a>
+                        <a class="btn btn-primary ml-1  btn-sm" asp-action="Amotizacion" asp-route-id="@item.Id"><i class="bi bi-file-spreadsheet-fill"></i>Amortizacion</a>
+                        <a class="btn btn-info ml-1  btn-sm" asp-action="CuotaPrestamo" asp-route-id="@item.Id"><i class="bi bi-file-earmark-text"></i> Detalle Cuota</a>
                     </div>
                 </td>
             </tr>

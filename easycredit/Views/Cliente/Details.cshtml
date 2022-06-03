@@ -1,14 +1,15 @@
 @model easycredit.Models.Cliente
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalle";
+    ViewData["Seccion"] = "Clientes";
     Layout = "_Layout";
 }
 
-<h1>Details</h1>
+<h1>Detalle de cliente</h1>
 
 <div>
-    <h4>Cliente</h4>
+ 
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -41,57 +42,17 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Telefono)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaCreado)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FechaCreado)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaEditado)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FechaEditado)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaEliminado)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FechaEliminado)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.UsuarioCreador)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.UsuarioCreador)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.UsuarioEliminador)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.UsuarioEliminador)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.UsuarioEditor)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.UsuarioEditor)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Active)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Active)
-        </dd>
+       
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Tipo)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Tipo.Id)
+            @Html.DisplayFor(model => model.Tipo.Tipo)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+   <a class="btn btn-warning ml-1  btn-sm" asp-action="Edit" asp-route-id="@Model?.Id"><i class="bi bi-pencil-square"></i> Editar</a>
+
+     <a asp-action="Index">Volver al listado</a>
 </div>

@@ -10,91 +10,94 @@ using easycredit.Models;
 
 namespace easycredit.Controllers
 {
-    public class ClienteController : Controller
+    public class CuentaController : Controller
     {
         private readonly easycreditContext _context;
 
-        public ClienteController(easycreditContext context)
+        public CuentaController(easycreditContext context)
         {
             _context = context;
         }
 
-        // GET: Cliente
+        // GET: Cuenta
         public async Task<IActionResult> Index()
         {
-            var easycreditContext = _context.Clientes.Include(c => c.Tipo);
+            var easycreditContext = _context.Cuenta.Include(c => c.Cliente).Include(c => c.Tipo);
             return View(await easycreditContext.ToListAsync());
         }
 
-        // GET: Cliente/Details/5
+        // GET: Cuenta/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Clientes == null)
+            if (id == null || _context.Cuenta == null)
             {
                 return NotFound();
             }
 
-            var cliente = await _context.Clientes
+            var cuentum = await _context.Cuenta
+                .Include(c => c.Cliente)
                 .Include(c => c.Tipo)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (cliente == null)
+            if (cuentum == null)
             {
                 return NotFound();
             }
 
-            return View(cliente);
+            return View(cuentum);
         }
 
-        // GET: Cliente/Create
+        // GET: Cuenta/Create
         public IActionResult Create()
         {
-            ViewData["tipos"] = _context.TipoClientes.Where(x => x.Active == true).ToList();
+            ViewData["ClienteId"] = new SelectList(_context.Clientes, "Id", "Id");
+            ViewData["TipoId"] = new SelectList(_context.TipoCuenta, "Id", "Id");
             return View();
         }
 
-        // POST: Cliente/Create
+        // POST: Cuenta/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nombre,Apellido,Cedula,Direccion,Telefono,FechaCreado,FechaEditado,FechaEliminado,UsuarioCreador,UsuarioEliminador,UsuarioEditor,Active,TipoId")] Cliente cliente)
+        public async Task<IActionResult> Create([Bind("Id,Banco,Cuenta,TipoId,ClienteId,FechaCreado,FechaEditado,FechaEliminado,UsuarioCreador,UsuarioEliminador,UsuarioEditor,Active")] Cuentum cuentum)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(cliente);
+                _context.Add(cuentum);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TipoId"] = new SelectList(_context.TipoClientes, "Id", "Id", cliente.TipoId);
-            return View(cliente);
+            ViewData["ClienteId"] = new SelectList(_context.Clientes, "Id", "Id", cuentum.ClienteId);
+            ViewData["TipoId"] = new SelectList(_context.TipoCuenta, "Id", "Id", cuentum.TipoId);
+            return View(cuentum);
         }
 
-        // GET: Cliente/Edit/5
+        // GET: Cuenta/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Clientes == null)
+            if (id == null || _context.Cuenta == null)
             {
                 return NotFound();
             }
 
-            var cliente = await _context.Clientes.FindAsync(id);
-            if (cliente == null)
+            var cuentum = await _context.Cuenta.FindAsync(id);
+            if (cuentum == null)
             {
                 return NotFound();
             }
-            ViewData["tipos"] = _context.TipoClientes.Where(x => x.Active == true).ToList();
-
-            return View(cliente);
+            ViewData["ClienteId"] = new SelectList(_context.Clientes, "Id", "Id", cuentum.ClienteId);
+            ViewData["TipoId"] = new SelectList(_context.TipoCuenta, "Id", "Id", cuentum.TipoId);
+            return View(cuentum);
         }
 
-        // POST: Cliente/Edit/5
+        // POST: Cuenta/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nombre,Apellido,Cedula,Direccion,Telefono,FechaCreado,FechaEditado,FechaEliminado,UsuarioCreador,UsuarioEliminador,UsuarioEditor,Active,TipoId")] Cliente cliente)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Banco,Cuenta,TipoId,ClienteId,FechaCreado,FechaEditado,FechaEliminado,UsuarioCreador,UsuarioEliminador,UsuarioEditor,Active")] Cuentum cuentum)
         {
-            if (id != cliente.Id)
+            if (id != cuentum.Id)
             {
                 return NotFound();
             }
@@ -103,12 +106,12 @@ namespace easycredit.Controllers
             {
                 try
                 {
-                    _context.Update(cliente);
+                    _context.Update(cuentum);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ClienteExists(cliente.Id))
+                    if (!CuentumExists(cuentum.Id))
                     {
                         return NotFound();
                     }
@@ -119,51 +122,53 @@ namespace easycredit.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TipoId"] = new SelectList(_context.TipoClientes, "Id", "Id", cliente.TipoId);
-            return View(cliente);
+            ViewData["ClienteId"] = new SelectList(_context.Clientes, "Id", "Id", cuentum.ClienteId);
+            ViewData["TipoId"] = new SelectList(_context.TipoCuenta, "Id", "Id", cuentum.TipoId);
+            return View(cuentum);
         }
 
-        // GET: Cliente/Delete/5
+        // GET: Cuenta/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Clientes == null)
+            if (id == null || _context.Cuenta == null)
             {
                 return NotFound();
             }
 
-            var cliente = await _context.Clientes
+            var cuentum = await _context.Cuenta
+                .Include(c => c.Cliente)
                 .Include(c => c.Tipo)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (cliente == null)
+            if (cuentum == null)
             {
                 return NotFound();
             }
 
-            return View(cliente);
+            return View(cuentum);
         }
 
-        // POST: Cliente/Delete/5
+        // POST: Cuenta/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Clientes == null)
+            if (_context.Cuenta == null)
             {
-                return Problem("Entity set 'easycreditContext.Clientes'  is null.");
+                return Problem("Entity set 'easycreditContext.Cuenta'  is null.");
             }
-            var cliente = await _context.Clientes.FindAsync(id);
-            if (cliente != null)
+            var cuentum = await _context.Cuenta.FindAsync(id);
+            if (cuentum != null)
             {
-                _context.Clientes.Remove(cliente);
+                _context.Cuenta.Remove(cuentum);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ClienteExists(int id)
+        private bool CuentumExists(int id)
         {
-          return (_context.Clientes?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.Cuenta?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

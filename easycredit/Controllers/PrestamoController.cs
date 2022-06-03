@@ -22,10 +22,67 @@ namespace easycredit.Controllers
         // GET: Prestamo
         public async Task<IActionResult> Index()
         {
-            var easycreditContext = _context.Prestamos.Where(x=>x.Active == true && x.Saldado == false).Include(p => p.Cliente).Include(p => p.Garante).Include(p => p.Garantia);
+            var easycreditContext = _context.Prestamos.Where(x=>x.Active == true && x.Saldado == false && x.FechaAprovacion == null).Include(p => p.Cliente).Include(p => p.Garante).Include(p => p.Garantia);
             return View(await easycreditContext.ToListAsync());
         }
+        public async Task<IActionResult> Aprovacion()
+        {
+            var easycreditContext = _context.Prestamos.Where(x => x.Active == true && x.Saldado == false && x.FechaAprovacion==null).Include(p => p.Cliente).Include(p => p.Garante).Include(p => p.Garantia);
+            return View("AprovacionPrestamos", await easycreditContext.ToListAsync());
+        }
+        public async Task<IActionResult> Aprobar(int id)
+        {
+            var prestamo = await _context.Prestamos.FindAsync(id);
+            prestamo.FechaAprovacion = DateTime.Today.Date;
+             _context.Update(prestamo);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index");
 
+        }
+        public async Task<IActionResult> Aprobados()
+        {
+            var easycreditContext = _context.Prestamos.Where(x => x.Active == true && x.Saldado == false && x.FechaAprovacion != null).Include(p => p.Cliente).Include(p => p.Garante).Include(p => p.Garantia);
+            return View("PrestamosAprobados", await easycreditContext.ToListAsync());
+        }
+        public async Task<IActionResult> Amotizacion(int id)
+        {
+            var prestamo = await _context.Prestamos.FindAsync(id);
+            double monto = (double)prestamo .Monto;
+            double taza = (double)prestamo.TazaInteres;
+            double plazo = (double)prestamo.Plazo;
+            double cuotaFijaMensual = (double)(monto * ((Math.Pow((1 + taza), plazo) * taza) / (Math.Pow((1 + taza), plazo) - 1)));
+            var amortizacion = new List<Amortizacion>();
+            var fechaInicio = prestamo.FechaInicio.Value;
+
+            for (int i = 1; i <= plazo; i++)
+            {
+                var interes = monto * taza;
+                var capital = Math.Round((cuotaFijaMensual - interes),2);
+                var saldo = Math.Round((monto - capital),2);
+               fechaInicio = fechaInicio.AddMonths(1);
+               amortizacion.Add(new Amortizacion()
+                {
+                    Numero = i,
+                    CapitalInicial = monto,
+                    Cuota = cuotaFijaMensual,
+                    Interes = interes,
+                    Abono = capital,
+                    SaldoPendiente = Math.Abs(saldo),
+                    FechaPlanificada = fechaInicio.ToString("dd - MMM - yyyy")
+                });
+                monto = saldo;
+
+            }
+            ViewData["id"] = id; 
+            return View("TablaAmortizacion",amortizacion.ToList());
+        }
+
+        public async Task<IActionResult> CuotaPrestamo(int id)
+        {
+            ViewData["id"] = id;
+            var cuotas = _context.Pagos.Where(x => x.CodigoPrestamo == id && x.Active == true && x.CodigoPrestamoNavigation.Saldado == false).Include(x=>x.CodigoPrestamoNavigation).Include(x => x.CodigoPrestamoNavigation.Cliente);
+            return View("CuotaPrestamo", cuotas);
+        }
         // GET: Prestamo/Details/5
         public async Task<IActionResult> Details(int? id)
         {

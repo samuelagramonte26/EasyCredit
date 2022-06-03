@@ -1,4 +1,4 @@
-@model IEnumerable<easycredit.Models.Prestamo>
+﻿@model IEnumerable<easycredit.Models.Prestamo>
 
 @{
     ViewData["Title"] = "Listado";
@@ -6,13 +6,11 @@
     Layout = "_Layout";
 }
 
-<h1>Listado de prestamos</h1>
+<h1>Listado de prestamos pentiente de aprobacion</h1>
 
-<p>
-    <a class="btn btn-success" asp-action="Create"> <i class="fa-solid fa-plus"></i>Agregar</a>
-</p>
+
 <table class="table table-hover table-striped">
-    <caption>Solicitud de prestamos</caption>
+    <caption>Prestamos sin aprobacion</caption>
     <thead class="table-dark">
         <tr>
             <th>
@@ -86,9 +84,9 @@
                 </td>
                 <td>
                     <div class="btn-group btn-sm" role="group" aria-label="Basic example">
-                        <a class="btn btn-warning ml-1  btn-sm" asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
+                        <a class="btn btn-success ml-1  btn-sm" asp-action="Aprobar" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square"></i> Aprobar</a>
                         <a class="btn btn-info ml-1  btn-sm" asp-action="Details" asp-route-id="@item.Id"><i class="fa-solid fa-info"></i> Detalle</a>
-                        <a class="btn btn-danger ml-1 btn-sm" asp-action="Delete" asp-route-id="@item.Id"><i class="fa-solid fa-trash-can"></i> Eliminar</a>
+   
                     </div>
                 </td>
             </tr>

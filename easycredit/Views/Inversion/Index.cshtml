@@ -1,0 +1,114 @@
+@model IEnumerable<easycredit.Models.Inversion>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Codigo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Monto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TazaInteres)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Plazo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaInicio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaTermino)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaCreado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaEditado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaEliminado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsuarioCreador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsuarioEliminador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsuarioEditor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Active)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Codigo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Monto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TazaInteres)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Plazo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaInicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaTermino)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaCreado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaEditado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaEliminado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsuarioCreador)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsuarioEliminador)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsuarioEditor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Active)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cliente.Id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

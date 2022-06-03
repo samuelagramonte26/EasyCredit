@@ -3,6 +3,7 @@
 @{
   
     ViewData["Title"] = "Editar Tipo Cliente";
+    ViewData["Seccion"] = "Cliente";
     Layout = "_Layout";
 }
 
@@ -22,49 +23,9 @@
                 <input asp-for="Descripcion" class="form-control" />
                 <span asp-validation-for="Descripcion" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="FechaCreado" class="control-label"></label>
-                <input asp-for="FechaCreado" class="form-control" />
-                <span asp-validation-for="FechaCreado" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FechaEditado" class="control-label"></label>
-                <input asp-for="FechaEditado" class="form-control" />
-                <span asp-validation-for="FechaEditado" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FechaEliminado" class="control-label"></label>
-                <input asp-for="FechaEliminado" class="form-control" />
-                <span asp-validation-for="FechaEliminado" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UsuarioCreador" class="control-label"></label>
-                <input asp-for="UsuarioCreador" class="form-control" />
-                <span asp-validation-for="UsuarioCreador" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UsuarioEliminador" class="control-label"></label>
-                <input asp-for="UsuarioEliminador" class="form-control" />
-                <span asp-validation-for="UsuarioEliminador" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UsuarioEditor" class="control-label"></label>
-                <input asp-for="UsuarioEditor" class="form-control" />
-                <span asp-validation-for="UsuarioEditor" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Active" class="control-label"></label>
-                <input asp-for="Active" class="form-control" />
-                <span asp-validation-for="Active" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
+            
+            <button type="submit" value="Create" class="btn btn-primary" ><i class="bi bi-check-lg"></i> Guardar</button>
+                <a asp-action="Index">Volver al listado</a>
         </form>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-

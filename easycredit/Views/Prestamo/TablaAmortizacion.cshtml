@@ -1,0 +1,73 @@
+﻿@model IEnumerable<easycredit.Models.Amortizacion>
+
+@{
+    ViewData["Title"] = "Amortizacion";
+    ViewData["Seccion"] = "Prestamos";
+    
+    Layout = "_Layout";
+}
+
+<h1>Tabla de amortizacion</h1>
+
+
+<table class="table table-hover table-striped">
+    <caption>Tabla de amortizacion</caption>
+    <thead class="table-dark">
+        <tr>
+            <th>
+                #.
+            </th>
+            <th>
+                Capital inicial
+            </th>
+            <th>
+                Cuota
+            </th>
+            <th>
+                Interes
+            </th>
+            <th>
+                Abono Capital
+            </th>
+            <th>
+                Saldo Pendiente
+            </th>
+
+            <th>
+                Fecha planificada
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+        <td>
+                @Html.DisplayFor(model => item.Numero)
+        </td>
+         <td>
+                @Html.DisplayFor(model => item.CapitalInicial)
+        </td>
+         <td>
+                @Html.DisplayFor(model => item.Cuota,2)
+        </td>
+         <td>
+                @Html.DisplayFor(model => item.Interes)
+        </td>
+         <td>
+                @Html.DisplayFor(model => item.Abono)
+        </td>
+         <td>
+                @Html.DisplayFor(model => item.SaldoPendiente)
+        </td>
+         <td>
+                @Html.DisplayFor(model => item.FechaPlanificada)
+        </td>
+        </tr>
+        }
+    </tbody>
+</table>
+<a class="btn btn-primary ml-1 float-end  btn-sm" asp-action="Aprobados"><i class="bi bi-arrow-return-left"></i> Volver</a>
+<a class="btn btn-success ml-1 float-end  btn-sm" target="_blank" asp-controller="Reporte" asp-route-id = "@ViewBag.id" asp-action="Amortizacion"><i class="bi bi-printer"></i> Imprimir</a>
+

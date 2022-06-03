@@ -24,24 +24,55 @@
     <!-- Divider -->
     <hr class="sidebar-divider" />
 
-    <!-- Heading -->
+    <!-- Mantenimientos -->
     <div class="sidebar-heading text-white">
-        <i class="fas fa-fw fa-cog text-black"></i>
-        <span>Mantenimientos</span>
+        <h6>
+            <i class="fas fa-fw fa-cog text-info"></i>
+            Mantenimientos
+        </h6>
 
 
         <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
 
         <div class="">
-            <div class="bg-white text-black py-2 rounded">
+            <div  class="bg-white text-black py-2 rounded">
                 <div class="ml-3">
                     <h6 class="text-black">Cruds:</h6>
+                    <ul class="nav flex-column text-black">
+                        <li class="nav-item">
+                            <a class="nav-link text-black-50" asp-controller="TipoCliente" asp-action="Index"><i class="bi bi-gear text-info"></i>Tipo Clientes</a>
 
-                    <a class="nav-item d-block" asp-controller="TipoCliente" asp-action="Index"><i class="fa-solid fa-people-arrows-left-right text-black"></i>>Tipo Clientes</a>
-                    <a class="nav-item d-block" asp-controller="Cliente" asp-action="Index"> <i class="fa-solid fa-people-robbery text-black"></i>Clientes</a>
-                    <a class="nav-item d-block" asp-controller="Prestamo" asp-action="Index"><i class="fa-solid fa-money-bill-1-wave text-black"></i>Prestamos</a>
-                    <a class="nav-item d-block" asp-controller="Garantia" asp-action="Index"> <i class="fa-solid fa-shield-check"></i>Garantia</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-black-50" asp-controller="Cliente" asp-action="Index"><i class="bi bi-person text-info"></i>Clientes</a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-black-50" asp-controller="Prestamo" asp-action="Index"><i class="bi bi-cash-coin text-info"></i>Prestamos</a>
+                          
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link text-black-50" asp-controller="Inversion" asp-action="Index"> <i class="bi bi-piggy-bank text-info"></i>Innversiones</a>
+                           
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-black-50" asp-controller="TipoGarantia" asp-action="Index"> <i class="bi bi-gear text-info"></i></i>Tipo Garantia</a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-black-50" asp-controller="Garantia" asp-action="Index"><i class="bi bi-shield-check text-info"></i>Garantia</a>
+
+                        </li>
+                          <li class="nav-item">
+                            <a class="nav-link text-black-50" asp-controller="ModalidadPago" asp-action="Index"> <i class="bi bi-gear text-info"></i>Modalidad pagos</a>
+                            
+                        </li></li>
+                          <li class="nav-item">
+                            <a class="nav-link text-black-50" asp-controller="ModalidadPago" asp-action="Index">  <i class="bi bi-receipt-cutoff text-info"></i>Cuentas</a>
+                          
+                        </li>
+                    </ul>
 
                 </div>
             </div>
@@ -50,24 +81,36 @@
     </div>
     <hr class="sidebar-divider" />
 
-    <!-- Heading -->
+    <!-- Gestion -->
     <div class="sidebar-heading text-white">
-        <i class="fas fa-fw fa-cog text-black"></i>
-        <span>Mantenimientos</span>
 
+        <h6>
+            <i class="fas fa-fw fa-folder text-info"></i>
 
+            Gestion
+        </h6>
         <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
 
         <div class="">
             <div class="bg-white text-black py-2 rounded">
                 <div class="ml-3">
-                    <h6 class="text-black">Cruds:</h6>
+                    <ul class="nav flex-column text-black">
+                        <li class="nav-item">
+                            <a class="nav-link text-black-50" asp-controller="Pago" asp-action="Index"><i class="bi bi-currency-dollar text-info"></i>Pagos</a>
 
-                    <a class="nav-item d-block" asp-controller="TipoCliente" asp-action="Index"><i class="fa-solid fa-people-arrows-left-right text-black"></i>>Tipo Clientes</a>
-                    <a class="nav-item d-block" asp-controller="Cliente" asp-action="Index"> <i class="fa-solid fa-people-robbery text-black"></i>Clientes</a>
-                    <a class="nav-item d-block" asp-controller="Prestamo" asp-action="Index"><i class="fa-solid fa-money-bill-1-wave text-black"></i>Prestamos</a>
-                    <a class="nav-item d-block" asp-controller="Garantia" asp-action="Index"> <i class="fa-solid fa-shield-check"></i>Garantia</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-black-50" asp-controller="Prestamo" asp-action="Aprovacion"> <i class="bi bi-check2 text-info"></i>Aprovacion prestamos</a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-black-50" asp-controller="Prestamo" asp-action="aprobados"><i class="bi bi-cash-stack text-info"></i>Prestamos vigentes</a>
+
+                        </li>
+                       
+                    </ul>
+
 
                 </div>
             </div>

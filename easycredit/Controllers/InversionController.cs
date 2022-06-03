@@ -10,91 +10,90 @@ using easycredit.Models;
 
 namespace easycredit.Controllers
 {
-    public class ClienteController : Controller
+    public class InversionController : Controller
     {
         private readonly easycreditContext _context;
 
-        public ClienteController(easycreditContext context)
+        public InversionController(easycreditContext context)
         {
             _context = context;
         }
 
-        // GET: Cliente
+        // GET: Inversion
         public async Task<IActionResult> Index()
         {
-            var easycreditContext = _context.Clientes.Include(c => c.Tipo);
+            var easycreditContext = _context.Inversions.Include(i => i.Cliente);
             return View(await easycreditContext.ToListAsync());
         }
 
-        // GET: Cliente/Details/5
+        // GET: Inversion/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Clientes == null)
+            if (id == null || _context.Inversions == null)
             {
                 return NotFound();
             }
 
-            var cliente = await _context.Clientes
-                .Include(c => c.Tipo)
+            var inversion = await _context.Inversions
+                .Include(i => i.Cliente)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (cliente == null)
+            if (inversion == null)
             {
                 return NotFound();
             }
 
-            return View(cliente);
+            return View(inversion);
         }
 
-        // GET: Cliente/Create
+        // GET: Inversion/Create
         public IActionResult Create()
         {
-            ViewData["tipos"] = _context.TipoClientes.Where(x => x.Active == true).ToList();
+            ViewData["ClienteId"] = new SelectList(_context.Clientes, "Id", "Id");
             return View();
         }
 
-        // POST: Cliente/Create
+        // POST: Inversion/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nombre,Apellido,Cedula,Direccion,Telefono,FechaCreado,FechaEditado,FechaEliminado,UsuarioCreador,UsuarioEliminador,UsuarioEditor,Active,TipoId")] Cliente cliente)
+        public async Task<IActionResult> Create([Bind("Id,Codigo,Monto,TazaInteres,Plazo,FechaInicio,FechaTermino,ClienteId,FechaCreado,FechaEditado,FechaEliminado,UsuarioCreador,UsuarioEliminador,UsuarioEditor,Active")] Inversion inversion)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(cliente);
+                _context.Add(inversion);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TipoId"] = new SelectList(_context.TipoClientes, "Id", "Id", cliente.TipoId);
-            return View(cliente);
+            ViewData["ClienteId"] = new SelectList(_context.Clientes, "Id", "Id", inversion.ClienteId);
+            return View(inversion);
         }
 
-        // GET: Cliente/Edit/5
+        // GET: Inversion/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Clientes == null)
+            if (id == null || _context.Inversions == null)
             {
                 return NotFound();
             }
 
-            var cliente = await _context.Clientes.FindAsync(id);
-            if (cliente == null)
+            var inversion = await _context.Inversions.FindAsync(id);
+            if (inversion == null)
             {
                 return NotFound();
             }
-            ViewData["tipos"] = _context.TipoClientes.Where(x => x.Active == true).ToList();
-
-            return View(cliente);
+            ViewData["ClienteId"] = new SelectList(_context.Clientes, "Id", "Id", inversion.ClienteId);
+            return View(inversion);
         }
 
-        // POST: Cliente/Edit/5
+        // POST: Inversion/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nombre,Apellido,Cedula,Direccion,Telefono,FechaCreado,FechaEditado,FechaEliminado,UsuarioCreador,UsuarioEliminador,UsuarioEditor,Active,TipoId")] Cliente cliente)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Codigo,Monto,TazaInteres,Plazo,FechaInicio,FechaTermino,ClienteId,FechaCreado,FechaEditado,FechaEliminado,UsuarioCreador,UsuarioEliminador,UsuarioEditor,Active")] Inversion inversion)
         {
-            if (id != cliente.Id)
+            if (id != inversion.Id)
             {
                 return NotFound();
             }
@@ -103,12 +102,12 @@ namespace easycredit.Controllers
             {
                 try
                 {
-                    _context.Update(cliente);
+                    _context.Update(inversion);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ClienteExists(cliente.Id))
+                    if (!InversionExists(inversion.Id))
                     {
                         return NotFound();
                     }
@@ -119,51 +118,51 @@ namespace easycredit.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TipoId"] = new SelectList(_context.TipoClientes, "Id", "Id", cliente.TipoId);
-            return View(cliente);
+            ViewData["ClienteId"] = new SelectList(_context.Clientes, "Id", "Id", inversion.ClienteId);
+            return View(inversion);
         }
 
-        // GET: Cliente/Delete/5
+        // GET: Inversion/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Clientes == null)
+            if (id == null || _context.Inversions == null)
             {
                 return NotFound();
             }
 
-            var cliente = await _context.Clientes
-                .Include(c => c.Tipo)
+            var inversion = await _context.Inversions
+                .Include(i => i.Cliente)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (cliente == null)
+            if (inversion == null)
             {
                 return NotFound();
             }
 
-            return View(cliente);
+            return View(inversion);
         }
 
-        // POST: Cliente/Delete/5
+        // POST: Inversion/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Clientes == null)
+            if (_context.Inversions == null)
             {
-                return Problem("Entity set 'easycreditContext.Clientes'  is null.");
+                return Problem("Entity set 'easycreditContext.Inversions'  is null.");
             }
-            var cliente = await _context.Clientes.FindAsync(id);
-            if (cliente != null)
+            var inversion = await _context.Inversions.FindAsync(id);
+            if (inversion != null)
             {
-                _context.Clientes.Remove(cliente);
+                _context.Inversions.Remove(inversion);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ClienteExists(int id)
+        private bool InversionExists(int id)
         {
-          return (_context.Clientes?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.Inversions?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }
