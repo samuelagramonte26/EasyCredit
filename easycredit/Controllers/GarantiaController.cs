@@ -48,7 +48,7 @@ namespace easycredit.Controllers
         // GET: Garantia/Create
         public IActionResult Create()
         {
-            ViewData["TipoId"] = new SelectList(_context.TipoGarantia, "Id", "Id");
+            ViewData["tipos"] = _context.TipoGarantia.Where(x => x.Active == true).ToList();
             return View();
         }
 

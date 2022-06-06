@@ -22,7 +22,7 @@ namespace easycredit.Controllers
         // GET: Cliente
         public async Task<IActionResult> Index()
         {
-            var easycreditContext = _context.Clientes.Include(c => c.Tipo);
+            var easycreditContext = _context.Clientes.Where(x => x.Active == true).Include(c => c.Tipo);
             return View(await easycreditContext.ToListAsync());
         }
 
@@ -156,14 +156,14 @@ namespace easycredit.Controllers
             {
                 _context.Clientes.Remove(cliente);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool ClienteExists(int id)
         {
-          return (_context.Clientes?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Clientes?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

@@ -50,7 +50,7 @@ namespace easycredit.Controllers
         // GET: Pago/Create
         public IActionResult Create()
         {
-            ViewData["CodigoPrestamo"] =_context.Prestamos.Where(x => x.Active==true).ToList();
+            ViewData["CodigoPrestamo"] =_context.Prestamos.Where(x => x.Active==true && x.Saldado == false).ToList();
             ViewData["Modalidad"] = _context.ModalidadPagos.Where(x => x.Active == true).ToList();
             ViewData["id"] = _context.Pagos.Where(x=>x.Active==true).OrderByDescending(p => p.Id).FirstOrDefault()?.Id;
             return View();
@@ -76,18 +76,29 @@ namespace easycredit.Controllers
             var pagos = _context.Pagos.Where(x => x.CodigoPrestamo == codigo && x.Active == true).OrderByDescending(x=>x.Id).FirstOrDefault();
             double? amort = 0;
             double? capital = 0;
+            Pago pago1 = new Pago();
+            var numPagos = _context.Pagos.Where(x => x.CodigoPrestamo == codigo && x.Active == true).ToList().Count();
 
             if (pagos != null)
             {
+                pago1.FechaPlanificada = prestamo.FechaInicio.Value.AddMonths(numPagos);
+                if(pagos.Amortizacion < 1)
+                {
+                    prestamo.Saldado = true;
+                    _context.Update(prestamo);
+                    await _context.SaveChangesAsync();
+                   return RedirectToAction(nameof(Index))
+;                }
               amort = pagos.Amortizacion;
                 capital = amort;
             }
             else
             {
+                pago1.FechaPlanificada = prestamo.FechaInicio.Value;
                 amort = monto;
                 capital = monto;
             }
-            Pago pago1 = new Pago();
+            
             var interes = amort * taza;
             var cuota = pago.Cuota;
             double? abono = cuota- interes;
@@ -103,8 +114,16 @@ namespace easycredit.Controllers
             pago1.FechaCreado = DateTime.Today.Date;
             pago1.Interes = interes;
             _context.Add(pago1);
-           
+           if(pago1.Amortizacion < 1)
+            {
+                prestamo.Saldado = true;
+                _context.Update(prestamo);
+                await _context.SaveChangesAsync();
+             //   return RedirectToAction(nameof(Index))
+            }
             await _context.SaveChangesAsync();
+
+            
             return RedirectToAction(nameof(Index));
 
             //if (ModelState.IsValid)

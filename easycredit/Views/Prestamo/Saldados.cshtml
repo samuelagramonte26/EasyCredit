@@ -1,0 +1,85 @@
+﻿@model IEnumerable<easycredit.Models.Prestamo>
+
+@{
+    ViewData["Title"] = "Listado";
+    ViewData["Seccion"] = "Prestamos";
+    Layout = "_Layout";
+}
+
+<h1>Listado de prestamos saldados</h1>
+
+
+<table class="table table-hover table-striped">
+    <caption> Prestamos saldados</caption>
+    <thead class="table-dark">
+        <tr>
+            <th>
+                Cod. prestamo
+            </th>
+            <th>
+                Monto
+            </th>
+            <th>
+                Plazo
+            </th>
+            <th>
+                Taza interes
+            </th>
+           
+
+            <th>
+                Fecha inicio
+            </th>
+            <th>
+                Fecha termino
+            </th>
+            <th>
+                Cliente
+            <th>
+                Garante
+            </th>
+
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Codigo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Monto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Plazo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TazaInteres)
+                </td>
+               
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaInicio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaTermino)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cliente.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Garante.Nombre)
+                </td>
+
+                <td>
+                    <div class="btn-group btn-sm" role="group" aria-label="Basic example">
+                        <a class="btn btn-success ml-1  btn-sm" asp-controller="Reportes" asp-action="CartaSaldo" asp-route-id="@item.Id"><i class="bi  bi-printer"></i>Emitir calta de saldo</a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

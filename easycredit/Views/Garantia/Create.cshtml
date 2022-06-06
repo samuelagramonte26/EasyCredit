@@ -30,38 +30,17 @@
             </div>
             <div class="form-group">
                 <label asp-for="TipoId" class="control-label"></label>
-                <select asp-for="TipoId" class ="form-control" asp-items="ViewBag.TipoId"></select>
+                <select asp-for="TipoId" class ="form-control">
+                    <option value="0">-- Seleccionar --</option>
+                    @foreach (var item in ViewBag.tipos)
+                    {
+                    <option value="@item.Id">@item.Tipo</option>
+                        
+                    }
+
+                </select>
             </div>
-            <div class="form-group">
-                <label asp-for="FechaCreado" class="control-label"></label>
-                <input asp-for="FechaCreado" class="form-control" />
-                <span asp-validation-for="FechaCreado" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FechaEditado" class="control-label"></label>
-                <input asp-for="FechaEditado" class="form-control" />
-                <span asp-validation-for="FechaEditado" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FechaEliminado" class="control-label"></label>
-                <input asp-for="FechaEliminado" class="form-control" />
-                <span asp-validation-for="FechaEliminado" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UsuarioCreador" class="control-label"></label>
-                <input asp-for="UsuarioCreador" class="form-control" />
-                <span asp-validation-for="UsuarioCreador" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UsuarioEliminador" class="control-label"></label>
-                <input asp-for="UsuarioEliminador" class="form-control" />
-                <span asp-validation-for="UsuarioEliminador" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UsuarioEditor" class="control-label"></label>
-                <input asp-for="UsuarioEditor" class="form-control" />
-                <span asp-validation-for="UsuarioEditor" class="text-danger"></span>
-            </div>
+          
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

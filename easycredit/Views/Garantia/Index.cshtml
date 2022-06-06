@@ -1,17 +1,19 @@
 @model IEnumerable<easycredit.Models.Garantium>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Listado";
+    ViewData["Seccion"] = "Garantia";
     Layout = "_Layout";
 }
 
-<h1>Index</h1>
+<h1>Listado de garantias</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="btn btn-success" asp-action="Create"><i class="bi bi-plus-lg"></i> Agregar</a>
 </p>
-<table class="table">
-    <thead>
+<table class="table table-hover table-striped">
+  <caption>Listado de garantias</caption>
+    <thead class="table-dark">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Codigo)
@@ -22,31 +24,11 @@
             <th>
                 @Html.DisplayNameFor(model => model.Ubicacion)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FechaCreado)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FechaEditado)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FechaEliminado)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UsuarioCreador)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UsuarioEliminador)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UsuarioEditor)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Active)
-            </th>
+           
             <th>
                 @Html.DisplayNameFor(model => model.Tipo)
             </th>
-            <th></th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -61,27 +43,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Ubicacion)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaCreado)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaEditado)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaEliminado)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UsuarioCreador)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UsuarioEliminador)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UsuarioEditor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Active)
-            </td>
+            
             <td>
                 @Html.DisplayFor(modelItem => item.Tipo.Id)
             </td>

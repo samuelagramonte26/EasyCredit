@@ -103,7 +103,13 @@ namespace easycredit.Controllers
 
             return View(prestamo);
         }
-
+        public async Task<IActionResult> Saldados()
+        {
+            var prestamos = await _context.Prestamos.Where(x => x.Active == true && x.Saldado == true).Include(x => x.Cliente).Include(g => g.Garante).ToListAsync();
+            
+            
+            return View(prestamos);
+        }
         // GET: Prestamo/Create
         public IActionResult Create()
         {
@@ -127,7 +133,7 @@ namespace easycredit.Controllers
                 prestamo.TazaInteres = ((prestamo.TazaInteres/12) / 100);
                 prestamo.Plazo = (prestamo.Plazo * 12);
                 prestamo.FechaSolicitud = DateTime.Today.Date;
-
+                prestamo.FechaTermino = prestamo.FechaInicio.Value.AddMonths((int)prestamo.Plazo);
                 _context.Add(prestamo);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -153,6 +159,7 @@ namespace easycredit.Controllers
             }
             prestamo.TazaInteres = ((prestamo.TazaInteres * 12) * 100);
             prestamo.Plazo= (prestamo.Plazo / 12);
+            prestamo.FechaTermino = prestamo.FechaInicio.Value.AddMonths((int)prestamo.Plazo);
             ViewData["clientes"] = _context.Clientes.Where(x => x.Active == true && x.Tipo.Tipo == "prestario").ToList();
             ViewData["garantes"] = _context.Clientes.Where(x => x.Active == true && x.Tipo.Tipo == "garante").ToList();
             ViewData["garantias"] = _context.Garantia.Where(x => x.Active == true);
