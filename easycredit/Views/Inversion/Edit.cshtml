@@ -1,13 +1,14 @@
 @model easycredit.Models.Inversion
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar";
+    ViewData["Seccion"] = "Inversion";
     Layout = "_Layout";
 }
 
-<h1>Edit</h1>
+<h1>Editar inversion</h1>
 
-<h4>Inversion</h4>
+
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -16,7 +17,7 @@
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <label asp-for="Codigo" class="control-label"></label>
-                <input asp-for="Codigo" class="form-control" />
+                <input asp-for="Codigo" readonly class="form-control" />
                 <span asp-validation-for="Codigo" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -31,67 +32,43 @@
             </div>
             <div class="form-group">
                 <label asp-for="Plazo" class="control-label"></label>
-                <input asp-for="Plazo" class="form-control" />
+                <input asp-for="Plazo"  class="form-control" />
                 <span asp-validation-for="Plazo" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="FechaInicio" class="control-label"></label>
-                <input asp-for="FechaInicio" class="form-control" />
-                <span asp-validation-for="FechaInicio" class="text-danger"></span>
+              
+                <input asp-for="FechaInicio" type="hidden" class="form-control" />
+               
             </div>
             <div class="form-group">
-                <label asp-for="FechaTermino" class="control-label"></label>
-                <input asp-for="FechaTermino" class="form-control" />
-                <span asp-validation-for="FechaTermino" class="text-danger"></span>
+                
+                <input asp-for="FechaTermino" type="hidden" class="form-control" />
+             
+            </div>
+         
+            <div class="form-group">
+              
+                <input asp-for="FechaCreado" type="hidden" class="form-control" />
+             
+            </div>
+      <div class="form-group">
+                <label asp-for="ClienteId" class="control-label">Cliente</label>
+                <select asp-for="ClienteId" class="form-control">
+                    <option value="0">-- Seleccionar --</option>
+                    @foreach (var item in ViewBag.clientes)
+                    {
+                        <option value="@item.Id">@item.Nombre @item.Apellido</option>
+                    }
+                </select>
             </div>
             <div class="form-group">
-                <label asp-for="ClienteId" class="control-label"></label>
-                <select asp-for="ClienteId" class="form-control" asp-items="ViewBag.ClienteId"></select>
-                <span asp-validation-for="ClienteId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FechaCreado" class="control-label"></label>
-                <input asp-for="FechaCreado" class="form-control" />
-                <span asp-validation-for="FechaCreado" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FechaEditado" class="control-label"></label>
-                <input asp-for="FechaEditado" class="form-control" />
-                <span asp-validation-for="FechaEditado" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FechaEliminado" class="control-label"></label>
-                <input asp-for="FechaEliminado" class="form-control" />
-                <span asp-validation-for="FechaEliminado" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UsuarioCreador" class="control-label"></label>
-                <input asp-for="UsuarioCreador" class="form-control" />
-                <span asp-validation-for="UsuarioCreador" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UsuarioEliminador" class="control-label"></label>
-                <input asp-for="UsuarioEliminador" class="form-control" />
-                <span asp-validation-for="UsuarioEliminador" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UsuarioEditor" class="control-label"></label>
-                <input asp-for="UsuarioEditor" class="form-control" />
-                <span asp-validation-for="UsuarioEditor" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Active" class="control-label"></label>
-                <input asp-for="Active" class="form-control" />
-                <span asp-validation-for="Active" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <button type="submit" value="Save" class="btn btn-primary" ><i class="bi bi-check-lg"></i> Guardar</button>
+                <a asp-action="Index">Volver al listado</a>
+
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
 

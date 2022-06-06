@@ -22,7 +22,7 @@ namespace easycredit.Controllers
         // GET: Inversion
         public async Task<IActionResult> Index()
         {
-            var easycreditContext = _context.Inversions.Include(i => i.Cliente);
+            var easycreditContext = _context.Inversions.Where(x => x.Active == true).Include(i => i.Cliente);
             return View(await easycreditContext.ToListAsync());
         }
 
@@ -48,7 +48,10 @@ namespace easycredit.Controllers
         // GET: Inversion/Create
         public IActionResult Create()
         {
-            ViewData["ClienteId"] = new SelectList(_context.Clientes, "Id", "Id");
+            ViewData["clientes"] =_context.Clientes.Where(x => x.Active == true).ToList();
+            var listdo = _context.Inversions.Where(x => x.Active == true).OrderByDescending( i => i.Id).FirstOrDefault();
+            ViewData["id"] = listdo?.Id;
+            
             return View();
         }
 
@@ -61,6 +64,12 @@ namespace easycredit.Controllers
         {
             if (ModelState.IsValid)
             {
+                inversion.FechaCreado = DateTime.Today.Date;
+                var plazo = inversion.Plazo * 12;
+                var interes = (inversion.TazaInteres / 12)/100;
+                inversion.TazaInteres = interes;
+                inversion.Plazo = plazo;
+                inversion.FechaTermino = inversion.FechaInicio.Value.AddMonths((int)plazo);
                 _context.Add(inversion);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -82,7 +91,9 @@ namespace easycredit.Controllers
             {
                 return NotFound();
             }
-            ViewData["ClienteId"] = new SelectList(_context.Clientes, "Id", "Id", inversion.ClienteId);
+            inversion.Plazo = inversion.Plazo / 12;
+            inversion.TazaInteres = (inversion.TazaInteres * 12)*100;
+            ViewData["clientes"] = _context.Clientes.Where(x => x.Active == true).ToList();
             return View(inversion);
         }
 
@@ -102,6 +113,9 @@ namespace easycredit.Controllers
             {
                 try
                 {
+                    inversion.Plazo = inversion.Plazo / 12;
+                    inversion.TazaInteres = (inversion.TazaInteres /12)/ 100;
+                    inversion.FechaEditado = DateTime.Today.Date;
                     _context.Update(inversion);
                     await _context.SaveChangesAsync();
                 }
@@ -153,7 +167,10 @@ namespace easycredit.Controllers
             var inversion = await _context.Inversions.FindAsync(id);
             if (inversion != null)
             {
-                _context.Inversions.Remove(inversion);
+                inversion.FechaEliminado = DateTime.Today.Date;
+                inversion.Active = false;
+
+                _context.Update(inversion);
             }
             
             await _context.SaveChangesAsync();
