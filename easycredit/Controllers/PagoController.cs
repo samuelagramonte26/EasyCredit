@@ -37,6 +37,7 @@ namespace easycredit.Controllers
            
             var pago = await _context.Pagos
                 .Include(p => p.CodigoPrestamoNavigation)
+                .Include(c => c.CodigoPrestamoNavigation.Cliente)
                 .Include(p => p.ModalidadNavigation)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (pago == null)
