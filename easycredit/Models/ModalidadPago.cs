@@ -7,6 +7,7 @@ namespace easycredit.Models
     {
         public ModalidadPago()
         {
+            PagoInversions = new HashSet<PagoInversion>();
             Pagos = new HashSet<Pago>();
         }
 
@@ -21,6 +22,7 @@ namespace easycredit.Models
         public int? UsuarioEditor { get; set; }
         public bool? Active { get; set; }
 
+        public virtual ICollection<PagoInversion> PagoInversions { get; set; }
         public virtual ICollection<Pago> Pagos { get; set; }
     }
 }

@@ -1,0 +1,61 @@
+@model easycredit.Models.PagoInversion
+
+@{
+    ViewData["Title"] = "Crear";
+    ViewData["Seccion"] = "Pagos inversiones";
+    Layout = "_Layout";
+    var codigo = Guid.NewGuid().ToString();
+    codigo = "EC" + codigo.Substring(1, 3) + "C" + ViewBag.id;
+}
+
+<h1>Nuevo Pago</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Cuota" class="control-label">Couta</label>
+                <input asp-for="Cuota" class="form-control" />
+                <span asp-validation-for="Cuota" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodigoComprobante" class="control-label">Cod. Comprobante</label>
+                <input asp-for="CodigoComprobante" readonly value="@codigo" class="form-control" />
+                <span asp-validation-for="CodigoComprobante" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Modalidad" class="control-label"></label>
+                <select asp-for="Modalidad" class="form-control">
+                    <option value="">-- Seleccionar --</option>
+                    @foreach (var item in ViewBag.Modalidad)
+                    {
+                        <option value="@item.Id">@item.Tipo</option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="CodigoInversion" class="control-label">Cod. Inversion</label>
+                <select asp-for="CodigoInversion" class="form-control">
+                    <option value="">-- Seleccionar --</option>
+                    @foreach (var item in ViewBag.CodigoInversion)
+                    {
+                        <option value="@item.Id">@item.Codigo</option>
+
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit" value="Guardar" class="btn btn-primary"><i class="fa-solid fa-check"></i> Guardar</button>
+
+                <a class="nav-item" asp-action="Index">Volver al listado</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+

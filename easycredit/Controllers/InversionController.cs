@@ -22,7 +22,7 @@ namespace easycredit.Controllers
         // GET: Inversion
         public async Task<IActionResult> Index()
         {
-            var easycreditContext = _context.Inversions.Where(x => x.Active == true).Include(i => i.Cliente);
+            var easycreditContext = _context.Inversions.Where(x => x.Active == true && x.Saldado == false).Include(i => i.Cliente);
             return View(await easycreditContext.ToListAsync());
         }
 
@@ -69,6 +69,7 @@ namespace easycredit.Controllers
                 var interes = (inversion.TazaInteres / 12)/100;
                 inversion.TazaInteres = interes;
                 inversion.Plazo = plazo;
+                inversion.Saldado = false;
                 inversion.FechaTermino = inversion.FechaInicio.Value.AddMonths((int)plazo);
                 _context.Add(inversion);
                 await _context.SaveChangesAsync();
@@ -113,7 +114,7 @@ namespace easycredit.Controllers
             {
                 try
                 {
-                    inversion.Plazo = inversion.Plazo / 12;
+                    inversion.Plazo = inversion.Plazo * 12;
                     inversion.TazaInteres = (inversion.TazaInteres /12)/ 100;
                     inversion.FechaEditado = DateTime.Today.Date;
                     _context.Update(inversion);

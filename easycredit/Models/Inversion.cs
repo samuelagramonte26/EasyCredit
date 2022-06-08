@@ -8,6 +8,7 @@ namespace easycredit.Models
         public Inversion()
         {
             CronogramaInversions = new HashSet<CronogramaInversion>();
+            PagoInversions = new HashSet<PagoInversion>();
         }
 
         public int Id { get; set; }
@@ -25,8 +26,10 @@ namespace easycredit.Models
         public int? UsuarioEliminador { get; set; }
         public int? UsuarioEditor { get; set; }
         public bool? Active { get; set; }
+        public bool? Saldado { get; set; }
 
         public virtual Cliente? Cliente { get; set; }
         public virtual ICollection<CronogramaInversion> CronogramaInversions { get; set; }
+        public virtual ICollection<PagoInversion> PagoInversions { get; set; }
     }
 }

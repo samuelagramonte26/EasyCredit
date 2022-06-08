@@ -69,12 +69,7 @@ namespace easycredit.Controllers
 
             var taza = prestamo?.TazaInteres;
             var monto = prestamo?.Monto;
-            //var interes = prestamo?.TazaInteres;
-          //  var plazo = prestamo?.Plazo;
-          //  var cuotaFijaMensual = (float?)(monto * ((Math.Pow((1 + (double)taza), (double)plazo) * taza) / (Math.Pow((1 + (double)taza), (double)plazo) - 1)));
-
-            // var cuotaFija = monto * ((Math.Pow((double)(1 + interes), (double)plazo) * interes) / (Math.Pow((double)(1 + interes), (double)plazo) - 1));
-            var pagos = _context.Pagos.Where(x => x.CodigoPrestamo == codigo && x.Active == true).OrderByDescending(x=>x.Id).FirstOrDefault();
+             var pagos = _context.Pagos.Where(x => x.CodigoPrestamo == codigo && x.Active == true).OrderByDescending(x=>x.Id).FirstOrDefault();
             double? amort = 0;
             double? capital = 0;
             Pago pago1 = new Pago();
@@ -120,7 +115,7 @@ namespace easycredit.Controllers
                 prestamo.Saldado = true;
                 _context.Update(prestamo);
                 await _context.SaveChangesAsync();
-             //   return RedirectToAction(nameof(Index))
+         
             }
             await _context.SaveChangesAsync();
 

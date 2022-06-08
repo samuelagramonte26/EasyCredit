@@ -32,6 +32,7 @@ namespace easycredit.Data
         public virtual DbSet<Inversion> Inversions { get; set; } = null!;
         public virtual DbSet<ModalidadPago> ModalidadPagos { get; set; } = null!;
         public virtual DbSet<Pago> Pagos { get; set; } = null!;
+        public virtual DbSet<PagoInversion> PagoInversions { get; set; } = null!;
         public virtual DbSet<Prestamo> Prestamos { get; set; } = null!;
         public virtual DbSet<TipoCliente> TipoClientes { get; set; } = null!;
         public virtual DbSet<TipoCuentum> TipoCuenta { get; set; } = null!;
@@ -472,6 +473,10 @@ namespace easycredit.Data
 
                 entity.Property(e => e.Plazo).HasColumnName("plazo");
 
+                entity.Property(e => e.Saldado)
+                    .HasColumnName("saldado")
+                    .HasDefaultValueSql("((0))");
+
                 entity.Property(e => e.TazaInteres).HasColumnName("tazaInteres");
 
                 entity.Property(e => e.UsuarioCreador).HasColumnName("usuario_creador");
@@ -589,6 +594,72 @@ namespace easycredit.Data
                     .WithMany(p => p.Pagos)
                     .HasForeignKey(d => d.Modalidad)
                     .HasConstraintName("FK__pago__modalidad__49C3F6B7");
+            });
+
+            modelBuilder.Entity<PagoInversion>(entity =>
+            {
+                entity.ToTable("pagoInversion");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.Abono).HasColumnName("abono");
+
+                entity.Property(e => e.Active)
+                    .HasColumnName("active")
+                    .HasDefaultValueSql("((1))");
+
+                entity.Property(e => e.Amortizacion).HasColumnName("amortizacion");
+
+                entity.Property(e => e.CapitalInicial).HasColumnName("capitalInicial");
+
+                entity.Property(e => e.CodigoComprobante)
+                    .HasMaxLength(30)
+                    .IsUnicode(false)
+                    .HasColumnName("codigoComprobante");
+
+                entity.Property(e => e.CodigoInversion).HasColumnName("codigoInversion");
+
+                entity.Property(e => e.Cuota).HasColumnName("cuota");
+
+                entity.Property(e => e.FechaCreado)
+                    .HasColumnType("datetime")
+                    .HasColumnName("fecha_creado");
+
+                entity.Property(e => e.FechaEditado)
+                    .HasColumnType("datetime")
+                    .HasColumnName("fecha_editado");
+
+                entity.Property(e => e.FechaEfectiva)
+                    .HasColumnType("date")
+                    .HasColumnName("fechaEfectiva");
+
+                entity.Property(e => e.FechaEliminado)
+                    .HasColumnType("datetime")
+                    .HasColumnName("fecha_eliminado");
+
+                entity.Property(e => e.FechaPlanificada)
+                    .HasColumnType("date")
+                    .HasColumnName("fechaPlanificada");
+
+                entity.Property(e => e.Interes).HasColumnName("interes");
+
+                entity.Property(e => e.Modalidad).HasColumnName("modalidad");
+
+                entity.Property(e => e.UsuarioCreador).HasColumnName("usuario_creador");
+
+                entity.Property(e => e.UsuarioEditor).HasColumnName("usuario_editor");
+
+                entity.Property(e => e.UsuarioEliminador).HasColumnName("usuario_eliminador");
+
+                entity.HasOne(d => d.CodigoInversionNavigation)
+                    .WithMany(p => p.PagoInversions)
+                    .HasForeignKey(d => d.CodigoInversion)
+                    .HasConstraintName("FK__pagoInver__codig__55F4C372");
+
+                entity.HasOne(d => d.ModalidadNavigation)
+                    .WithMany(p => p.PagoInversions)
+                    .HasForeignKey(d => d.Modalidad)
+                    .HasConstraintName("FK__pagoInver__modal__55009F39");
             });
 
             modelBuilder.Entity<Prestamo>(entity =>
