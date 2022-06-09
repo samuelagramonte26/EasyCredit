@@ -91,6 +91,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZXJzaW9uXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Inversion/CuotaInversion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZXJzaW9uXEN1b3RhSW52ZXJzaW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Inversion/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZXJzaW9uXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -105,6 +109,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Inversion/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZXJzaW9uXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Inversion/InversionVigente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZXJzaW9uXEludmVyc2lvblZpZ2VudGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Inversion/TablaAmortizacion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZXJzaW9uXFRhYmxhQW1vcnRpemFjaW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/ModalidadPago/Create.cshtml]

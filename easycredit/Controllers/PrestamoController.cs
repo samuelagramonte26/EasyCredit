@@ -81,6 +81,7 @@ namespace easycredit.Controllers
         {
             ViewData["id"] = id;
             var cuotas = _context.Pagos.Where(x => x.CodigoPrestamo == id && x.Active == true && x.CodigoPrestamoNavigation.Saldado == false).Include(x=>x.CodigoPrestamoNavigation).Include(x => x.CodigoPrestamoNavigation.Cliente);
+           
             return View("CuotaPrestamo", cuotas);
         }
         // GET: Prestamo/Details/5

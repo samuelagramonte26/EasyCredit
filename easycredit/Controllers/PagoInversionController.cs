@@ -146,8 +146,9 @@ namespace easycredit.Controllers
             {
                 return NotFound();
             }
-            ViewData["CodigoInversion"] = new SelectList(_context.Inversions, "Id", "Id", pagoInversion.CodigoInversion);
-            ViewData["Modalidad"] = new SelectList(_context.ModalidadPagos, "Id", "Id", pagoInversion.Modalidad);
+            ViewData["CodigoInversion"] = _context.Inversions.ToList();
+            ViewData["Modalidad"] = _context.ModalidadPagos.ToList();
+            ViewData["id"] = _context.PagoInversions.Where(x => x.Active == true).OrderByDescending(p => p.Id).FirstOrDefault().Id;
             return View(pagoInversion);
         }
 
@@ -167,6 +168,42 @@ namespace easycredit.Controllers
             {
                 try
                 {
+                    //  var pago1 = await _context.Pagos.FindAsync(id);
+                    var codigo = pagoInversion.CodigoInversion;
+                    var inversion = _context.Inversions.Where(x => x.Active == true).FirstOrDefault(p => p.Id == codigo);
+
+                    var taza = inversion?.TazaInteres;
+                    var monto = inversion?.Monto;
+                    // var pagos = _context.Pagos.Where(x => x.CodigoInversion == codigo).OrderByDescending(x => x.Id).FirstOrDefault();
+                    double? amort = 0;
+                    double? capital = 0;
+                    //  if (pagos != null)
+                    //  {
+                    //  amort = pagoInversion.Amortizacion;
+                    capital = pagoInversion.CapitalInicial;
+                    // }
+                    // else
+                    //  {
+                    //    amort = monto;
+                    //      capital = monto;
+                    //  }
+                    //  Pago pago1 = new Pago();
+
+                    var interes = capital * taza;
+                    var cuota = pagoInversion.Cuota;
+                    double? abono = cuota - interes;
+                    //pago1.Id = pagoInversion.Id;
+                    //    pagoInversion.Cuota = cuota;
+                    pagoInversion.CodigoInversion = codigo;
+                    pagoInversion.Abono = abono;
+                    //  pago1.CodigoComprobante = pagoInversion.CodigoComprobante;
+                    pagoInversion.Amortizacion = capital - abono;
+                    pagoInversion.CapitalInicial = capital;
+                    pagoInversion.Modalidad = pagoInversion.Modalidad;
+
+                    pagoInversion.FechaEditado = DateTime.Today.Date;
+                    pagoInversion.Interes = interes;
+
                     _context.Update(pagoInversion);
                     await _context.SaveChangesAsync();
                 }
@@ -220,7 +257,9 @@ namespace easycredit.Controllers
             var pagoInversion = await _context.PagoInversions.FindAsync(id);
             if (pagoInversion != null)
             {
-                _context.PagoInversions.Remove(pagoInversion);
+                pagoInversion.Active = false;
+                pagoInversion.FechaEliminado = DateTime.Today.Date;
+                _context.Update(pagoInversion);
             }
             
             await _context.SaveChangesAsync();

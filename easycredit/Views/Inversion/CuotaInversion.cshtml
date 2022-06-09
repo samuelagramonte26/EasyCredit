@@ -1,9 +1,9 @@
-﻿@model IEnumerable<easycredit.Models.Pago>
+﻿@model IEnumerable<easycredit.Models.PagoInversion>
 
 @{
     Layout = "_Layout";
     ViewData["Title"] = "Cuotas";
-    ViewData["Seccion"] = "Prestamos";
+    ViewData["Seccion"] = "Inversion";
     int numero = 0;
     int? plazo = 0;
     int? pendientes = 0;
@@ -78,9 +78,9 @@
                             @Html.DisplayFor(model => item.Amortizacion)
                         </td>
                         @{
-                            plazo = item.CodigoPrestamoNavigation.Plazo;
-                            cliente = item.CodigoPrestamoNavigation.Cliente.Nombre;
-                            monto = (double)item.CodigoPrestamoNavigation.Monto;
+                            plazo = item.CodigoInversionNavigation.Plazo;
+                            cliente = item.CodigoInversionNavigation.Cliente.Nombre;
+                            monto = (double)item.CodigoInversionNavigation.Monto;
                             total = Math.Round((double)item.Amortizacion, 2);
                         }
                     </tr>
@@ -99,7 +99,7 @@
 
             </div>
             <div class="col-6">
-                <h4 class="">Monto prestamo: <i class="text-black-50">@monto</i></h4>
+                <h4 class="">Monto Inversion: <i class="text-black-50">@monto</i></h4>
                 <h4>Total Pendiente: <i class="text-black-50">@total</i></h4>
 
             </div>
@@ -110,7 +110,7 @@
         <a class="btn btn-success ml-1 float-end  btn-sm" target="_blank" asp-controller="Reporte" asp-route-id="@ViewBag.id" asp-action="CuotaPrestamo"><i class="bi bi-printer"></i> Imprimir</a>
     }else{
         <h3 class="text-black-50 text-center">No hay registros que mostrar!</h3>
-        <a class="btn btn-primary ml-1 float-end  btn-sm" asp-action="Aprobados"><i class="bi bi-arrow-return-left"></i> Volver</a>
+        <a class="btn btn-primary ml-1 float-end  btn-sm" asp-action="Vigentes"><i class="bi bi-arrow-return-left"></i> Volver</a>
 
     }
 

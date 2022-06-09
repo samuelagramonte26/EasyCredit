@@ -25,7 +25,57 @@ namespace easycredit.Controllers
             var easycreditContext = _context.Inversions.Where(x => x.Active == true && x.Saldado == false).Include(i => i.Cliente);
             return View(await easycreditContext.ToListAsync());
         }
+        public async Task<IActionResult> Vigentes()
+        {
+            var easycreditContext = _context.Inversions.Where(x => x.Active == true && x.Saldado == false).Include(p => p.Cliente);
+            return View("InversionVigente", await easycreditContext.ToListAsync());
+        }
+        public async Task<IActionResult> Saldadas()
+        {
+            var inversiones = await _context.Inversions.Where(x => x.Active == true && x.Saldado == true).Include(x => x.Cliente).ToListAsync();
 
+
+            return View(inversiones);
+        }
+        public async Task<IActionResult> CuotaInversion(int id)
+        {
+            ViewData["id"] = id;
+            var cuotas = _context.PagoInversions.Where(x => x.CodigoInversion == id && x.Active == true && x.CodigoInversionNavigation.Saldado == false).Include(x => x.CodigoInversionNavigation).Include(x => x.CodigoInversionNavigation.Cliente);
+
+            return View("CuotaInversion",await cuotas.ToListAsync());
+        }
+        public async Task<IActionResult> Amotizacion(int id)
+        {
+            var prestamo = await _context.Inversions.FindAsync(id);
+            double monto = (double)prestamo.Monto;
+            double taza = (double)prestamo.TazaInteres;
+            double plazo = (double)prestamo.Plazo;
+            double cuotaFijaMensual = (double)(monto * ((Math.Pow((1 + taza), plazo) * taza) / (Math.Pow((1 + taza), plazo) - 1)));
+            var amortizacion = new List<Amortizacion>();
+            var fechaInicio = prestamo.FechaInicio.Value;
+
+            for (int i = 1; i <= plazo; i++)
+            {
+                var interes = monto * taza;
+                var capital = Math.Round((cuotaFijaMensual - interes), 2);
+                var saldo = Math.Round((monto - capital), 2);
+                fechaInicio = fechaInicio.AddMonths(1);
+                amortizacion.Add(new Amortizacion()
+                {
+                    Numero = i,
+                    CapitalInicial = monto,
+                    Cuota = cuotaFijaMensual,
+                    Interes = interes,
+                    Abono = capital,
+                    SaldoPendiente = Math.Abs(saldo),
+                    FechaPlanificada = fechaInicio.ToString("dd - MMM - yyyy")
+                });
+                monto = saldo;
+
+            }
+            ViewData["id"] = id;
+            return View("TablaAmortizacion", amortizacion.ToList());
+        }
         // GET: Inversion/Details/5
         public async Task<IActionResult> Details(int? id)
         {

@@ -1,0 +1,96 @@
+﻿@model IEnumerable<easycredit.Models.Amortizacion>
+
+@{
+    ViewData["Title"] = "Amortizacion";
+    ViewData["Seccion"] = "Inversiones";
+
+    Layout = "_Layout";
+}
+
+<h1>Tabla de amortizacion</h1>
+
+<section class="tabla">
+    <table class="table table-hover table-striped">
+        <caption>Tabla de amortizacion</caption>
+        <thead class="table-dark">
+            <tr>
+                <th>
+                    #.
+                </th>
+                <th>
+                    Capital inicial
+                </th>
+                <th>
+                    Cuota
+                </th>
+                <th>
+                    Interes
+                </th>
+                <th>
+                    Abono Capital
+                </th>
+                <th>
+                    Saldo Pendiente
+                </th>
+
+                <th>
+                    Fecha planificada
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => item.Numero)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.CapitalInicial)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.Cuota,2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.Interes)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.Abono)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.SaldoPendiente)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.FechaPlanificada)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
+<a class="btn btn-primary ml-1 float-end  btn-sm" asp-action="Vigentes"><i class="bi bi-arrow-return-left"></i> Volver</a>
+<button class="btn imprimir btn-success ml-1 float-end  btn-sm"><i class="bi bi-printer"></i> Imprimir</button>
+<script>
+        document.querySelector(".imprimir").addEventListener('click',()=>{
+         let content = document.querySelector(".tabla").innerHTML;
+
+               window.document.write(content);
+                window.document.close();
+              //  console.log(content)
+                const head = window.document.getElementsByTagName("head");
+                head[0].innerHTML = '<link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.min.css" />';
+
+             setTimeout(()=>{
+                  window.print();
+                window.close();
+              window.location = "/Inversion/Vigentes";
+             },500)
+
+
+        })
+
+
+
+</script>
+

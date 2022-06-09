@@ -1,121 +1,144 @@
 @model easycredit.Models.PagoInversion
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalle";
+    ViewData["Seccion"] = "Pagos";
     Layout = "_Layout";
 }
 
-<h1>Details</h1>
+<h1>Detalle de pago</h1>
 
 <div>
-    <h4>PagoInversion</h4>
+
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CapitalInicial)
+        <dt class="col-sm-2">
+            Capital inicial
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.CapitalInicial)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaPlanificada)
+
+        <dt class="col-sm-2">
+            Fecha efectiva
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FechaPlanificada)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaEfectiva)
-        </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.FechaEfectiva)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Cuota)
+        <dt class="col-sm-2">
+            Cuota
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Cuota)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Interes)
+        <dt class="col-sm-2">
+            Interes
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Interes)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Abono)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Abono)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Amortizacion)
+        <dt class="col-sm-2">
+            Saldo pendiente
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Amortizacion)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CodigoComprobante)
+        <dt class="col-sm-2">
+            Cod. comprobante
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.CodigoComprobante)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaCreado)
+
+
+        <dt class="col-sm-2">
+            Cod. prestamo
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FechaCreado)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CodigoInversionNavigation.Codigo)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaEditado)
+        <dt class="col-sm-2">
+            Modalidad pago
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FechaEditado)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaEliminado)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FechaEliminado)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.UsuarioCreador)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.UsuarioCreador)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.UsuarioEliminador)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.UsuarioEliminador)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.UsuarioEditor)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.UsuarioEditor)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Active)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Active)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CodigoInversionNavigation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CodigoInversionNavigation.Id)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ModalidadNavigation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ModalidadNavigation.Id)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ModalidadNavigation.Tipo)
         </dd>
     </dl>
 </div>
+<section class="container recibo border border-info border-opacity-25 border-2 rounded-4 p-5">
+    <h3 class="text-center">EasyCredit</h3><hr/>
+    <div class="row">
+        <div class="col-9">
+            <h3>Recibo de pago</h3>
+                   </div>
+        <div class="col-3">
+            <p>@Model.CodigoComprobante</p>
+            <p>@Model.FechaEfectiva</p>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+             <h6>Pago prestamo: </h6>
+            <h6>Oficina:</h6>
+            <h6>Cliente:</h6>
+            <h6>Total de cuota:</h6>
+            <h6>Abono:</h6>
+            <h6>Interes:</h6>
+            <h6>Monto Pendiente:</h6>
+          
+        </div>
+        <div class="col-6">
+             <h6  class="text-black-50">@Model.CodigoInversionNavigation.Codigo</h6>
+             <h6 class="text-black-50">HDFGT232</h6>
+             <h6 class="text-black-50">@Model.CodigoInversionNavigation.Cliente.Nombre</h6>
+             <h6 class="text-black-50">@Model.Cuota</h6>
+             <h6 class="text-black-50">@Math.Round((double)Model.Abono,2)</h6>
+             <h6 class="text-black-50">@Math.Round((double)Model.Interes,2)</h6>
+             <h6 class="text-black-50">@Math.Round(Math.Abs((double)Model.Amortizacion),2)</h6>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-6">
+        <h6 class="d-flex">Firma del cajero: __________________________ </h6>
+        </div>
+        <div class="col-6"></div>
+    </div>
+</section>
+    <button class="btn mt-3 imprimir btn-success"><i class="bi bi-printer"></i>Imprimir</button>
+
+<hr />
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@Model?.Id"><i class="fa-solid fa-pen-to-square"></i>Editar</a> |
+    <a class="nav-item" asp-action="Index">Volver al listado</a>
 </div>
+<script>
+    document.querySelector(".imprimir").addEventListener('click',()=>{
+       
+let content = document.querySelector(".recibo").innerHTML;
+        // window.open();
+           window.document.write(content);
+            window.document.close();
+           // window.focus();
+            const head = window.document.getElementsByTagName("head");
+    
+            head[0].innerHTML = '<link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.min.css" />';
+         // console.log()
+         setTimeout(()=>{
+              window.print();
+            window.close();
+            window.location = "/PagoInversion";
+         },500)
+           
+      
+    })
+
+
+
+</script>

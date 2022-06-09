@@ -1,0 +1,79 @@
+﻿@model IEnumerable<easycredit.Models.Inversion>
+
+@{
+    ViewData["Title"] = "Listado";
+    ViewData["Seccion"] = "Inversiones";
+    Layout = "_Layout";
+}
+
+<h1>Listado de inversiones vigentes</h1>
+
+
+<table class="table table-hover table-striped">
+    <caption> Inversiones vigentes</caption>
+    <thead class="table-dark">
+        <tr>
+            <th>
+               Cod. inversion
+            </th>
+            <th>
+              Monto
+            </th>
+            <th>
+              Plazo
+            </th>
+            <th>
+               Taza interes
+            </th>
+         
+            <th>
+                Fecha inicio
+            </th>
+            <th>
+              Fecha termino
+            </th>
+            <th>
+               Cliente
+            
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Codigo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Monto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Plazo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TazaInteres)
+                </td>
+              
+              
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaInicio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaTermino)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cliente.Nombre)
+                </td>
+              
+                <td>
+                    <div class="btn-group btn-sm" role="group" aria-label="Basic example">
+                        <a class="btn btn-primary ml-1  btn-sm" asp-action="Amotizacion" asp-route-id="@item.Id"><i class="bi bi-file-spreadsheet-fill"></i>Amortizacion</a>
+                        <a class="btn btn-info ml-1  btn-sm" asp-action="CuotaPrestamo" asp-route-id="@item.Id"><i class="bi bi-file-earmark-text"></i> Detalle Cuota</a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
