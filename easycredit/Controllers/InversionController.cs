@@ -35,8 +35,9 @@ namespace easycredit.Controllers
             var inversiones = await _context.Inversions.Where(x => x.Active == true && x.Saldado == true).Include(x => x.Cliente).ToListAsync();
 
 
-            return View(inversiones);
+            return View("InversionSaldadas",inversiones);
         }
+
         public async Task<IActionResult> CuotaInversion(int id)
         {
             ViewData["id"] = id;

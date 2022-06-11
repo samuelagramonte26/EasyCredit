@@ -108,7 +108,9 @@
 
         <a class="btn btn-primary ml-1 float-end  btn-sm" asp-action="Aprobados"><i class="bi bi-arrow-return-left"></i> Volver</a>
         <a class="btn btn-success ml-1 float-end  btn-sm" target="_blank" asp-controller="Reporte" asp-route-id="@ViewBag.id" asp-action="CuotaPrestamo"><i class="bi bi-printer"></i> Imprimir</a>
-    }else{
+    }
+    else
+    {
         <h3 class="text-black-50 text-center">No hay registros que mostrar!</h3>
         <a class="btn btn-primary ml-1 float-end  btn-sm" asp-action="Aprobados"><i class="bi bi-arrow-return-left"></i> Volver</a>
 

@@ -8,297 +8,309 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = easycredit
 build_property.RootNamespace = easycredit
-build_property.ProjectDir = C:\Users\SAgramonte\Documents\Diseño y desarrollo de aplicaciones\Git\EasyCredit\easycredit\
+build_property.ProjectDir = C:\Users\SAgramonte\Documents\Diseño y desarrollo de aplicaciones\Git\EasyCredit\easyCredit\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\SAgramonte\Documents\Diseño y desarrollo de aplicaciones\Git\EasyCredit\easycredit
+build_property.MSBuildProjectDirectory = C:\Users\SAgramonte\Documents\Diseño y desarrollo de aplicaciones\Git\EasyCredit\easyCredit
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Cliente/Create.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Cliente/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Cliente/Delete.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Cliente/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Cliente/Details.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Cliente/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Cliente/Edit.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Cliente/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Cliente/Index.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Cliente/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Cuenta/Create.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Cuenta/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Cuenta/Delete.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Cuenta/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Cuenta/Details.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Cuenta/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Cuenta/Edit.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Cuenta/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Cuenta/Index.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Cuenta/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Garantia/Create.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Garantia/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FyYW50aWFcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Garantia/Delete.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Garantia/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FyYW50aWFcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Garantia/Details.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Garantia/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FyYW50aWFcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Garantia/Edit.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Garantia/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FyYW50aWFcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Garantia/Index.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Garantia/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FyYW50aWFcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Home/Index.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Home/Privacy.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Inversion/Create.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Inversion/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZXJzaW9uXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Inversion/CuotaInversion.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Inversion/CuotaInversion.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZXJzaW9uXEN1b3RhSW52ZXJzaW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Inversion/Delete.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Inversion/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZXJzaW9uXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Inversion/Details.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Inversion/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZXJzaW9uXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Inversion/Edit.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Inversion/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZXJzaW9uXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Inversion/Index.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Inversion/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZXJzaW9uXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Inversion/InversionVigente.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Inversion/InversionSaldadas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZXJzaW9uXEludmVyc2lvblNhbGRhZGFzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Inversion/InversionVigente.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZXJzaW9uXEludmVyc2lvblZpZ2VudGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Inversion/TablaAmortizacion.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Inversion/TablaAmortizacion.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZXJzaW9uXFRhYmxhQW1vcnRpemFjaW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/ModalidadPago/Create.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/ModalidadPago/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kYWxpZGFkUGFnb1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/ModalidadPago/Delete.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/ModalidadPago/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kYWxpZGFkUGFnb1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/ModalidadPago/Details.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/ModalidadPago/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kYWxpZGFkUGFnb1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/ModalidadPago/Edit.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/ModalidadPago/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kYWxpZGFkUGFnb1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/ModalidadPago/Index.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/ModalidadPago/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kYWxpZGFkUGFnb1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/PagoInversion/Create.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/PagoInversion/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnb0ludmVyc2lvblxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/PagoInversion/Delete.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/PagoInversion/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnb0ludmVyc2lvblxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/PagoInversion/Details.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/PagoInversion/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnb0ludmVyc2lvblxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/PagoInversion/Edit.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/PagoInversion/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnb0ludmVyc2lvblxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/PagoInversion/Index.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/PagoInversion/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnb0ludmVyc2lvblxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Pago/Create.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Pago/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnb1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Pago/Delete.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Pago/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnb1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Pago/Details.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Pago/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnb1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Pago/Edit.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Pago/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnb1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Pago/Index.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Pago/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnb1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Prestamo/AprovacionPrestamos.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Prestamo/AprovacionPrestamos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3RhbW9cQXByb3ZhY2lvblByZXN0YW1vcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Prestamo/Create.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Prestamo/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3RhbW9cQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Prestamo/CuotaPrestamo.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Prestamo/CuotaPrestamo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3RhbW9cQ3VvdGFQcmVzdGFtby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Prestamo/Delete.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Prestamo/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3RhbW9cRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Prestamo/Details.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Prestamo/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3RhbW9cRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Prestamo/Edit.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Prestamo/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3RhbW9cRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Prestamo/Index.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Prestamo/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3RhbW9cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Prestamo/PrestamosAprobados.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Prestamo/PrestamosAprobados.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3RhbW9cUHJlc3RhbW9zQXByb2JhZG9zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Prestamo/Saldados.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Prestamo/Saldados.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3RhbW9cU2FsZGFkb3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Prestamo/TablaAmortizacion.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Prestamo/TablaAmortizacion.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3RhbW9cVGFibGFBbW9ydGl6YWNpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Reporte/Amortizacion.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Reporte/Amortizacion.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0ZVxBbW9ydGl6YWNpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Reporte/CuotaPrestamo.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Reporte/CuotaPrestamo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0ZVxDdW90YVByZXN0YW1vLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Shared/Error.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Reporte/Top.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0ZVxUb3AuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Shared/_LayoutAdmin.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Shared/_LayoutAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Shared/_LayoutPrincipal.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Shared/_LayoutPrincipal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRQcmluY2lwYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Shared/_NavAdmin.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Shared/_NavAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9OYXZBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Shared/_TopAtrazo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Ub3BBdHJhem8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/TipoCliente/Create.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/TipoCliente/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb0NsaWVudGVcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/TipoCliente/Delete.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/TipoCliente/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb0NsaWVudGVcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/TipoCliente/Details.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/TipoCliente/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb0NsaWVudGVcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/TipoCliente/Edit.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/TipoCliente/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb0NsaWVudGVcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/TipoCliente/Index.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/TipoCliente/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb0NsaWVudGVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/TipoGarantia/Create.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/TipoGarantia/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb0dhcmFudGlhXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/TipoGarantia/Delete.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/TipoGarantia/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb0dhcmFudGlhXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/TipoGarantia/Details.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/TipoGarantia/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb0dhcmFudGlhXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/TipoGarantia/Edit.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/TipoGarantia/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb0dhcmFudGlhXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/TipoGarantia/Index.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/TipoGarantia/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb0dhcmFudGlhXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/_ViewImports.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/_ViewStart.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easycredit/Views/Shared/_Layout.cshtml]
+[C:/Users/SAgramonte/Documents/Diseño y desarrollo de aplicaciones/Git/EasyCredit/easyCredit/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-bigd0pula9

@@ -1,0 +1,36 @@
+﻿@model IEnumerable<TopAtrazo>
+
+<section class="seccion">
+    <h3 class="text-center mt-3">Listado de clientes morosos top @Model.First().Inicio - @Model.First().Fin</h3>
+    <table class="table table-hover table-striped">
+        <caption>Listado clientes de @Model.First().Inicio - @Model.First().Fin dias de atrazo</caption>
+        <thead class="table-dark">
+            <th>Cod. Prestamo</th>
+            <th>Nombre cliente</th>
+            <th>Apellido</th>
+            <th>Monto prestamo</th>
+            <th>Monto pendiente</th>
+            <th>Dias atrazo</th>
+            <th>Fecha ultimo pago</th>
+            <th>Fecha esperada pago atrazado</th>
+            <th>Total de pagos</th>
+            <th>Total pendientes</th>
+           
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Codigo</td>
+                <td>@item.Nombre</td>
+                <td>@item.Apellido</td>
+                <td>@item.Monto</td>
+                <td>@Math.Round(@item.MontoPendiente,2)</td>
+                <td>@item.DiasAtrazo</td>
+                <td>@item.FechaUltimoPago.ToString("dd/MMM/yyyy")</td>
+                <td>@item.FechaPlanificada.ToString("dd/MMM/yyyy")</td>
+                <td>@item.CuotasPagadas</td>
+                <td>@item.CuotasPendientes</td>
+            </tr>
+        }
+    </table>
+</section>

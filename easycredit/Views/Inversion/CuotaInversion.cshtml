@@ -10,13 +10,14 @@
     var cliente = "";
     double monto = 0;
     double total = 0;
+
 }
 
-<h1 class="text-center">Tabla de cuotas</h1>
 
-<section class="tabla">
     @if (Model.Any())
     {
+        <section class="tabla">
+    <h1 class="text-center">Tabla de cuotas</h1>
         <table class="table table-hover table-striped">
             <caption>Tabla de Cuotas</caption>
             <thead class="table-dark">
@@ -101,18 +102,42 @@
             <div class="col-6">
                 <h4 class="">Monto Inversion: <i class="text-black-50">@monto</i></h4>
                 <h4>Total Pendiente: <i class="text-black-50">@total</i></h4>
-
+             
             </div>
 
         </div>
-
-        <a class="btn btn-primary ml-1 float-end  btn-sm" asp-action="Aprobados"><i class="bi bi-arrow-return-left"></i> Volver</a>
-        <a class="btn btn-success ml-1 float-end  btn-sm" target="_blank" asp-controller="Reporte" asp-route-id="@ViewBag.id" asp-action="CuotaPrestamo"><i class="bi bi-printer"></i> Imprimir</a>
+         </section>
+        <a class="btn btn-primary ml-1 float-end  btn-sm" asp-action="Vigentes"><i class="bi bi-arrow-return-left"></i> Volver</a>
+        <button class="btn btn-success ml-1 float-end imprimir  btn-sm" ><i class="bi bi-printer"></i> Imprimir</button>
+       
     }else{
         <h3 class="text-black-50 text-center">No hay registros que mostrar!</h3>
         <a class="btn btn-primary ml-1 float-end  btn-sm" asp-action="Vigentes"><i class="bi bi-arrow-return-left"></i> Volver</a>
 
     }
 
-</section>
+
+<script>
+        document.querySelector(".imprimir").addEventListener('click',(e)=>{
+            e.preventDefault();
+         let content = document.querySelector(".tabla").innerHTML;
+
+               window.document.write(content);
+                window.document.close();
+              //  console.log(content)
+                const head = window.document.getElementsByTagName("head");
+                head[0].innerHTML = '<link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.min.css" />';
+
+             setTimeout(()=>{
+                  window.print();
+                window.close();
+              window.location = "/Inversion/Vigentes";
+             },500)
+
+
+        })
+
+
+
+</script>
 

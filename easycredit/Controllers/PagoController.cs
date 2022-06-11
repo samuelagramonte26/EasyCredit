@@ -51,7 +51,7 @@ namespace easycredit.Controllers
         // GET: Pago/Create
         public IActionResult Create()
         {
-            ViewData["CodigoPrestamo"] =_context.Prestamos.Where(x => x.Active==true && x.Saldado == false).ToList();
+            ViewData["CodigoPrestamo"] =_context.Prestamos.Where(x => x.Active==true && x.Saldado == false && x.FechaAprovacion != null).ToList();
             ViewData["Modalidad"] = _context.ModalidadPagos.Where(x => x.Active == true).ToList();
             ViewData["id"] = _context.Pagos.Where(x=>x.Active==true).OrderByDescending(p => p.Id).FirstOrDefault()?.Id;
             return View();

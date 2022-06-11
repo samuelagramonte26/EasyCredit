@@ -2,39 +2,41 @@
 
 @{
     ViewData["Title"] = "Listado";
-    ViewData["Seccion"] = "Inversiones";
+    ViewData["Seccion"] = "Prestamos";
     Layout = "_Layout";
 }
 
-<h1>Listado de inversiones vigentes</h1>
+<h1>Listado de prestamos saldados</h1>
 
 
 <table class="table table-hover table-striped">
-    <caption> Inversiones vigentes</caption>
+    <caption> Prestamos saldados</caption>
     <thead class="table-dark">
         <tr>
             <th>
-               Cod. inversion
+                Cod. prestamo
             </th>
             <th>
-              Monto
+                Monto
             </th>
             <th>
-              Plazo
+                Plazo
             </th>
             <th>
-               Taza interes
+                Taza interes
             </th>
-         
+           
+
             <th>
                 Fecha inicio
             </th>
             <th>
-              Fecha termino
+                Fecha termino
             </th>
             <th>
-               Cliente
-            
+                Cliente
+           </th>
+
             <th>Acciones</th>
         </tr>
     </thead>
@@ -54,8 +56,8 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.TazaInteres)
                 </td>
-              
-              
+               
+
                 <td>
                     @Html.DisplayFor(modelItem => item.FechaInicio)
                 </td>
@@ -69,8 +71,7 @@
               
                 <td>
                     <div class="btn-group btn-sm" role="group" aria-label="Basic example">
-                        <a class="btn btn-primary ml-1  btn-sm" asp-action="Amotizacion" asp-route-id="@item.Id"><i class="bi bi-file-spreadsheet-fill"></i>Amortizacion</a>
-                        <a class="btn btn-info ml-1  btn-sm" asp-action="CuotaInversion" asp-route-id="@item.Id"><i class="bi bi-file-earmark-text"></i> Detalle Cuota</a>
+                        <a class="btn btn-success ml-1  btn-sm" asp-controller="Reportes" asp-action="CartaSaldo" asp-route-id="@item.Id"><i class="bi  bi-printer"></i>Emitir calta de saldo</a>
                     </div>
                 </td>
             </tr>

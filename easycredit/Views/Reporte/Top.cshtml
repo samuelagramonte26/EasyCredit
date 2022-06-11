@@ -1,0 +1,38 @@
+﻿@model IEnumerable<TopAtrazo>
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Listado";
+    ViewData["Seccion"] = "Atrazos";
+ 
+ 
+}
+@if(Model.Any()){
+
+<partial name="_topAtrazo" model="Model" />
+
+<button class="btn btn-success ml-1 imprimir float-end  btn-sm"><i class="bi bi-printer"></i> Imprimir</button>
+
+<script>
+            document.querySelector(".imprimir").addEventListener('click',()=>{
+
+    let content = document.querySelector(".seccion").innerHTML;
+
+               window.document.write(content);
+                window.document.close();
+
+                const head = window.document.getElementsByTagName("head");
+
+                head[0].innerHTML = '<link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.min.css" />';
+
+             setTimeout(()=>{
+                  window.print();
+                window.close();
+                window.location = "/Reporte/Top?inicio=@Model.First().Inicio&fin=@Model.First().Fin";
+             },500)
+
+
+        })
+</script>
+}else{
+    <h2 class="text-center text-black-50">Sin Regisros para mostrar!</h2>
+}
